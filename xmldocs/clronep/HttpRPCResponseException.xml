@@ -1,0 +1,32 @@
+<Type Name="HttpRPCResponseException" FullName="clronep.HttpRPCResponseException">
+  <TypeSignature Language="C#" Value="public class HttpRPCResponseException : clronep.OneException" />
+  <AssemblyInfo>
+    <AssemblyName>clronep</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>clronep.OneException</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>Http response exception.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public HttpRPCResponseException (string message);" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="message" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="message">To be added.</param>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

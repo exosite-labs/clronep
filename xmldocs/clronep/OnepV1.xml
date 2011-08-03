@@ -1,0 +1,658 @@
+<Type Name="OnepV1" FullName="clronep.OnepV1">
+  <TypeSignature Language="C#" Value="public class OnepV1" />
+  <AssemblyInfo>
+    <AssemblyName>clronep</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>This class provides the wrapper function of one platform api.</summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public OnepV1 (string url, int timeout);" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters>
+        <Parameter Name="url" Type="System.String" />
+        <Parameter Name="timeout" Type="System.Int32" />
+      </Parameters>
+      <Docs>
+        <param name="url">The url of hosted of json-rpc service.</param>
+        <param name="timeout">The timeout (second) for json-rpc service call.</param>
+        <summary>This constructor is for http transport.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="activate">
+      <MemberSignature Language="C#" Value="public clronep.Result activate (string clientkey, string codetype, string code);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="codetype" Type="System.String" />
+        <Parameter Name="code" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="codetype">Could be "client" or "dispatch" or "share"</param>
+        <param name="code">The activation code.</param>
+        <summary>Given an Activation Code, the associated entity is activated for the calling Client.</summary>
+        <returns />
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="comment">
+      <MemberSignature Language="C#" Value="public clronep.Result comment (string clientkey, string rid, string visibility, string comment);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="visibility" Type="System.String" />
+        <Parameter Name="comment" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The id of resource.</param>
+        <param name="visibility">Visibility could be either "public" or "private".</param>
+        <param name="comment">Comment string for this resoruce.</param>
+        <summary>Makes a comment entry associated with the calling client and the specified
+resource ID combination, with the specified visibility. Different clients can
+create different comment entries for the same resource. Each client can create
+one comment per resource of each visibility type.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="create">
+      <MemberSignature Language="C#" Value="public clronep.Result create (string clientkey, string type, object desc);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="desc" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="type">Type could be "client" | "dataport" | "datarule" | "dispatch".</param>
+        <param name="desc">
+<list type="bullet">
+  <item>
+    <term>client </term>
+  </item>
+</list>
+
+{
+  "limits":{
+    "client":number | "infinity" :: 0
+   ,"dataport":number | "infinity" :: 0
+   ,"datarule":number | "infinity" :: 0
+   ,"dispatch":number | "infinity" :: 0
+   ,"email":number | "infinity" :: 0
+   ,"http":number | "infinity" :: 0
+   ,"io":number | "infinity" :: 0
+   ,"share":number | "infinity" :: 0
+   ,"sms":number | "infinity" :: 0
+   ,"xmpp":number | "infinity" :: 0
+  }
+ ,"locked":true | false :: false
+ ,"name":string
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+<list type="bullet">
+  <item>
+    <term>dataport</term>
+  </item>
+</list>
+
+
+{
+  "format":"binary" | "boolean" | "float" | "integer" | "string"
+ ,"name":string
+ ,"preprocess":[[Operation ,Constant],...]
+ ,"retention":{
+    "count":number :: 0
+   ,"duration":number :: 0
+  }
+ ,"subscribe":ResourceID | null :: null
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+<list type="bullet">
+  <item>
+    <term>datarule</term>
+  </item>
+</list>
+
+{
+  "format":"boolean" | "float" | "integer"
+ ,"name":string
+ ,"preprocess":[[Operation ,Constant],...]
+ ,"retention":{
+    "count":number :: 0
+   ,"duration":number :: 0
+  }
+ ,"rule":{
+  % ONE OF:
+    "simple":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"repeat":true | false
+    }
+  % OR
+    "timeout":{
+      "repeat":true | false
+     ,"timeout":number
+    }
+  % OR
+    "interval":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"repeat":true | false
+     ,"timeout":number
+    }
+  % OR
+    "duration":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"repeat":true | false
+     ,"timeout":number
+    }
+  % OR
+    "count":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"count":number
+     ,"repeat":true | false
+     ,"timeout":number
+    }
+  }
+ ,"subscribe":ResourceID | null :: null
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+<list type="bullet">
+  <item>
+    <term>dispatch</term>
+  </item>
+</list>
+
+{
+  "locked":true | false :: false
+ ,"message":string
+ ,"method":"email" | "http_get" | "http_post" | "http_put" | "sms" | "xmpp"
+ ,"name":string
+ ,"preprocess":[[Operation ,Constant],...]
+ ,"recipient":string
+ ,"subject":string
+ ,"subscribe":ResourceID | null :: null
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+Preprocess "Operation" -&gt;
+  "add"
+  "sub"
+  "mul"
+  "div"
+  "mod"
+  "gt"
+  "geq"
+  "lt"
+  "leq"
+  "eq"
+  "neq"
+  "value"
+
+Preprocess "Constant" -&gt;
+  number
+  ResourceID</param>
+        <summary>Create a One Platform resource of specified Type and Description.
+</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="deactivate">
+      <MemberSignature Language="C#" Value="public clronep.Result deactivate (string clientkey, string codetype, string code);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="codetype" Type="System.String" />
+        <Parameter Name="code" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="codetype">Could be "client" | "dispatch" | "share".</param>
+        <param name="code">The activation code.</param>
+        <summary>Given an Activation Code, the associated entity is deactivated for the calling Client.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="drop">
+      <MemberSignature Language="C#" Value="public clronep.Result drop (string clientkey, string rid);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <summary>Drop specified and all associated resources and aliases.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="flush">
+      <MemberSignature Language="C#" Value="public clronep.Result flush (string clientkey, string rid);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <summary>Empty specified resource of all data.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="info">
+      <MemberSignature Language="C#" Value="public clronep.Result info (string clientkey, string rid, object options);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="options" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="options">Each boolean entry defaults to false.  If an empty Options list is given, then
+all are set to true.  Timestamps default to the start of time or the end of time
+depending on their context.
+
+
+
+<list type="bullet">
+  <item>
+    <term>Not all resource types have the same set of Options.</term>
+  </item>
+</list>
+{
+  "aliases":true | false
+ ,"basic":true | false
+ ,"comments":true | false
+ ,"description":true | false
+ ,"endtime":number
+ ,"key":true | false
+ ,"usage":true | false
+ ,"shares":true | false
+ ,"starttime":number
+ ,"storage":true | false
+}
+</param>
+        <summary>Provide creation and usage information of specified resource according to the specified Options (eg, Options could specify to only return the Description).
+</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="listing">
+      <MemberSignature Language="C#" Value="public clronep.Result listing (string clientkey, object types);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="types" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="types">Types could be subset of ["client" ,"dataport" ,"datarule" ,"dispatch"].</param>
+        <summary>List all resourceids of given type(s).</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="lookup">
+      <MemberSignature Language="C#" Value="public clronep.Result lookup (string clientkey, string type, string alias);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="type" Type="System.String" />
+        <Parameter Name="alias" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="type">Type could be "alias" | "owner".</param>
+        <param name="alias">alias string | resource id</param>
+        <summary>Lookup an aliased resource, or a resource's owner.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="map">
+      <MemberSignature Language="C#" Value="public clronep.Result map (string clientkey, string rid, string alias);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="alias" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="alias">The alias string.</param>
+        <summary>Give the specified ResourceID an alias.  Subsequently the ResourceID can be looked up using the "lookup" method.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="read">
+      <MemberSignature Language="C#" Value="public clronep.Result read (string clientkey, string rid, object options);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="options" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="options">{
+  "starttime":number
+ ,"endtime":number
+ ,"limit":number
+ ,"sort":"asc" | "desc"
+}</param>
+        <summary>Read data from the specified resource(s).</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="record">
+      <MemberSignature Language="C#" Value="public clronep.Result record (string clientkey, string rid, object[] entries, object options);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="entries" Type="System.Object[]" />
+        <Parameter Name="options" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="entries">[[timstamp1,data1],[timestamp2,data2],....]</param>
+        <param name="options">Currently is empty.</param>
+        <summary>Records a list of historical entries to the resource specified.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="revoke">
+      <MemberSignature Language="C#" Value="public clronep.Result revoke (string clientkey, string codetype, string code);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="codetype" Type="System.String" />
+        <Parameter Name="code" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="codetype">"client" | "dispatch" | "share"</param>
+        <param name="code">The activation code.</param>
+        <summary>Given an Activation Code, the associated entity is revoked after which the Activation Code can no longer be used.
+</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="share">
+      <MemberSignature Language="C#" Value="public clronep.Result share (string clientkey, string rid, object options);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="options" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="options">{
+  "count":number :: 1
+ ,"duration":number | "infinity" :: "infinity"
+}</param>
+        <summary>Generates a share KeyCode for the given ResourceID.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="unmap">
+      <MemberSignature Language="C#" Value="public clronep.Result unmap (string clientkey, string alias);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="alias" Type="System.String" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="alias">The alias string.</param>
+        <summary>Unmap the given Alias.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="update">
+      <MemberSignature Language="C#" Value="public clronep.Result update (string clientkey, string rid, object desc);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="desc" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="desc">See 'create' for Description parameter content.</param>
+        <summary>Update the description of specifed resource id.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="write">
+      <MemberSignature Language="C#" Value="public clronep.Result write (string clientkey, object[] entries);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="entries" Type="System.Object[]" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="entries">[[rid1,data1],[rid2,data2],...]</param>
+        <summary>Writes the given values for the respective resources in the list.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="write">
+      <MemberSignature Language="C#" Value="public clronep.Result write (string clientkey, object[] entries, object options);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="entries" Type="System.Object[]" />
+        <Parameter Name="options" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="entries">[[rid1,data1],[rid2,data2],...]</param>
+        <param name="options">Currently is empty.</param>
+        <summary>Writes the given values for the respective resources in the list with particular option.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="write">
+      <MemberSignature Language="C#" Value="public clronep.Result write (string clientkey, string rid, object value);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The resource id.</param>
+        <param name="value">The data value.</param>
+        <summary>Writes a single value to the resource specified.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="write">
+      <MemberSignature Language="C#" Value="public clronep.Result write (string clientkey, string rid, object value, object options);" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>clronep.Result</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="clientkey" Type="System.String" />
+        <Parameter Name="rid" Type="System.String" />
+        <Parameter Name="value" Type="System.Object" />
+        <Parameter Name="options" Type="System.Object" />
+      </Parameters>
+      <Docs>
+        <param name="clientkey">The client identification key.</param>
+        <param name="rid">The id of resource.</param>
+        <param name="value">The data value.</param>
+        <param name="options">Currently is empty.</param>
+        <summary>Writes a single value to the resource specified with particular option.</summary>
+        <returns>To be added.</returns>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

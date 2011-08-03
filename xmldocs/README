@@ -1,0 +1,15 @@
+The following 3 commands are used to generate the xml/html documents:
+
+1 Read the dll library and generate the xml document directory.
+$monodocer  -assembly:clronep/bin/Release/clronep.dll -path:xmldocs -pretty
+
+2 Edit the documents. 
+$monodoc --edit xmldocs
+
+3 Transform to html files 
+$mdoc export-html -o docs xmldocs
+
+
+This link has detail information:
+
+http://www.mono-project.com/Generating_Documentation#Assemble_the_generated_Documentation

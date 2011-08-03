@@ -1,0 +1,46 @@
+<Overview>
+  <Assemblies>
+    <Assembly Name="clronep" Version="1.0.0.0">
+      <Attributes>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyCompany("Exosite")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyConfiguration("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyCopyright("Copyright © Exosite 2011")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyDescription("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyProduct("Exosite clronep")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyTitle("Exosite clronep")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Reflection.AssemblyTrademark("")</AttributeName>
+        </Attribute>
+        <Attribute>
+          <AttributeName>System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)</AttributeName>
+        </Attribute>
+      </Attributes>
+    </Assembly>
+  </Assemblies>
+  <Remarks>To be added.</Remarks>
+  <Copyright>To be added.</Copyright>
+  <Types>
+    <Namespace Name="clronep">
+      <Type Name="EmptyOption" Kind="Class" />
+      <Type Name="HttpRPCRequestException" Kind="Class" />
+      <Type Name="HttpRPCResponseException" Kind="Class" />
+      <Type Name="OneException" Kind="Class" />
+      <Type Name="OnePlatformException" Kind="Class" />
+      <Type Name="OnepV1" Kind="Class" />
+      <Type Name="Result" Kind="Class" />
+    </Namespace>
+  </Types>
+  <Title>clronep</Title>
+</Overview>

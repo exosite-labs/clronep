@@ -1,0 +1,1648 @@
+<html>
+  <head>
+    <title>clronep.OnepV1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      a { text-decoration: none }
+
+      div.SideBar {
+        padding-left: 1em;
+        padding-right: 1em;
+        right: 0;
+        float: right;
+        border: thin solid black;
+        background-color: #f2f2f2;
+      }
+    
+      .CollectionTitle { font-weight: bold }
+      .PageTitle { font-size: 150%; font-weight: bold }
+
+      .Summary { }
+      .Signature { }          
+      .Remarks { }
+      .Members { }
+      .Copyright { }
+      
+      .Section { font-size: 125%; font-weight: bold }
+      p.Summary {
+        margin-left: 1em;
+      }
+      .SectionBox { margin-left: 2em }
+      .NamespaceName { font-size: 105%; font-weight: bold }
+      .NamespaceSumary { }
+      .MemberName { font-size: 115%; font-weight: bold; margin-top: 1em }
+      .Subsection { font-size: 105%; font-weight: bold }
+      .SubsectionBox { margin-left: 2em; margin-bottom: 1em }
+
+      .CodeExampleTable { background-color: #f5f5dd; border: thin solid black; padding: .25em; }
+      
+      .TypesListing {
+        border-collapse: collapse;
+      }
+
+      td {
+        vertical-align: top;
+      }
+      th {
+        text-align: left;
+      }
+
+      .TypesListing td { 
+        margin: 0px;  
+        padding: .25em;
+        border: solid gray 1px;
+      }
+
+      .TypesListing th { 
+        margin: 0px;  
+        padding: .25em;
+        background-color: #f2f2f2;
+        border: solid gray 1px;
+      }
+
+      div.Footer {
+        border-top: 1px solid gray;
+        margin-top: 1.5em;
+        padding-top: 0.6em;
+        text-align: center;
+        color: gray;
+      }
+
+      span.NotEntered /* Documentation for this section has not yet been entered */ {
+        font-style: italic;
+        color: red;	
+      }
+
+      div.Header {
+        background: #B0C4DE;
+        border: double;
+        border-color: white;
+        border-width: 7px;
+        padding: 0.5em;
+      }
+
+      div.Header * {
+        font-size: smaller;
+      }
+
+      div.Note {
+      }
+
+      i.ParamRef {
+      }
+
+      i.subtitle {
+      }
+
+      ul.TypeMembersIndex {
+        text-align: left;
+        background: #F8F8F8;
+      }
+
+      ul.TypeMembersIndex li {
+        display: inline;
+        margin:  0.5em;
+      }
+
+      table.HeaderTable {
+      }
+
+      table.SignatureTable {
+      }
+
+      table.Documentation, table.Enumeration, table.TypeDocumentation {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      table.Documentation tr th, table.TypeMembers tr th, table.Enumeration tr th, table.TypeDocumentation tr th {
+        background: whitesmoke;
+        padding: 0.8em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: bottom;
+      }
+
+      table.Documentation tr td, table.TypeMembers tr td, table.Enumeration tr td, table.TypeDocumentation tr td {
+        padding: 0.5em;
+        border: 1px solid gray;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      table.TypeMembers {
+        border: 1px solid #C0C0C0;
+        width: 100%;
+      }
+
+      table.TypeMembers tr td {
+        background: #F8F8F8;
+        border: white;
+      }
+
+      table.Documentation {
+      }
+
+      table.TypeMembers {
+      }
+
+      div.CodeExample {
+        width: 100%;
+        border: 1px solid #DDDDDD;
+        background-color: #F8F8F8;
+      }
+
+      div.CodeExample p {
+        margin: 0.5em;
+        border-bottom: 1px solid #DDDDDD;
+      }
+
+      div.CodeExample div {
+        margin: 0.5em;
+      }
+
+      h4 {
+        margin-bottom: 0;
+      }
+
+      div.Signature {
+        border: 1px solid #C0C0C0;
+        background: #F2F2F2;
+        padding: 1em;
+      }
+    </style>
+    <script type="text/JavaScript">
+      function toggle_display (block) {
+        var w = document.getElementById (block);
+        var t = document.getElementById (block + ":toggle");
+        if (w.style.display == "none") {
+          w.style.display = "block";
+          t.innerHTML = "⊟";
+        } else {
+          w.style.display = "none";
+          t.innerHTML = "⊞";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="CollectionTitle">
+      <a href="../index.html">clronep</a> : <a href="index.html">clronep Namespace</a></div>
+    <div class="SideBar">
+      <p>
+        <a href="#T:clronep.OnepV1">Overview</a>
+      </p>
+      <p>
+        <a href="#T:clronep.OnepV1:Signature">Signature</a>
+      </p>
+      <p>
+        <a href="#T:clronep.OnepV1:Docs">Remarks</a>
+      </p>
+      <p>
+        <a href="#Members">Members</a>
+      </p>
+      <p>
+        <a href="#T:clronep.OnepV1:Members">Member Details</a>
+      </p>
+    </div>
+    <h1 class="PageTitle" id="T:clronep.OnepV1">OnepV1  Class</h1>
+    <p class="Summary" id="T:clronep.OnepV1:Summary">This class provides the wrapper function of one platform api.</p>
+    <div id="T:clronep.OnepV1:Signature">
+      <div class="Signature">public class  <b>OnepV1</b></div>
+    </div>
+    <div class="Remarks" id="T:clronep.OnepV1:Docs">
+      <h4 class="Subsection">
+        <a href="javascript:toggle_display('T:clronep.OnepV1:Docs:Remarks')">
+          <span id="T:clronep.OnepV1:Docs:Remarks:toggle">⊟</span> Remarks</a>
+      </h4>
+      <blockquote class="SubsectionBox" id="T:clronep.OnepV1:Docs:Remarks">
+        <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+      </blockquote>
+      <h4 class="Subsection">
+        <a href="javascript:toggle_display('T:clronep.OnepV1:Docs:Version Information')">
+          <span id="T:clronep.OnepV1:Docs:Version Information:toggle">⊟</span> Requirements</a>
+      </h4>
+      <blockquote class="SubsectionBox" id="T:clronep.OnepV1:Docs:Version Information">
+        <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+      <h2 class="Section" id="Members">
+        <a href="javascript:toggle_display('_Members')">
+          <span id="_Members:toggle">⊟</span> Members</a>
+      </h2>
+      <blockquote class="SectionBox" id="_Members">
+        <p>
+								See Also: Inherited members from
+								<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>.
+							</p>
+        <h3>
+          <a href="javascript:toggle_display('Public Constructors')">
+            <span id="Public Constructors:toggle">⊟</span> Public Constructors</a>
+        </h3>
+        <blockquote id="Public Constructors">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td>
+                  <div>
+                    <b>
+                      <a href="#C:clronep.OnepV1(System.String,System.Int32)">OnepV1</a>
+                    </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a>)</div>
+                </td>
+                <td>This constructor is for http transport.</td>
+              </tr>
+            </table>
+          </div>
+        </blockquote>
+        <h3>
+          <a href="javascript:toggle_display('Public Methods')">
+            <span id="Public Methods:toggle">⊟</span> Public Methods</a>
+        </h3>
+        <blockquote id="Public Methods">
+          <div class="SubsectionBox">
+            <table class="TypeMembers">
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.activate(System.String,System.String,System.String)">activate</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Given an Activation Code, the associated entity is activated for the calling Client.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String)">comment</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Makes a comment entry associated with the calling client and the specified
+resource ID combination, with the specified visibility. Different clients can
+create different comment entries for the same resource. Each client can create
+one comment per resource of each visibility type.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.create(System.String,System.String,System.Object)">create</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Create a One Platform resource of specified Type and Description.
+</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.deactivate(System.String,System.String,System.String)">deactivate</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Given an Activation Code, the associated entity is deactivated for the calling Client.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.drop(System.String,System.String)">drop</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Drop specified and all associated resources and aliases.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.flush(System.String,System.String)">flush</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Empty specified resource of all data.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.info(System.String,System.String,System.Object)">info</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Provide creation and usage information of specified resource according to the specified Options (eg, Options could specify to only return the Description).
+</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.listing(System.String,System.Object)">listing</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>List all resourceids of given type(s).</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.lookup(System.String,System.String,System.String)">lookup</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Lookup an aliased resource, or a resource's owner.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.map(System.String,System.String,System.String)">map</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Give the specified ResourceID an alias.  Subsequently the ResourceID can be looked up using the "lookup" method.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.read(System.String,System.String,System.Object)">read</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Read data from the specified resource(s).</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object)">record</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>[], <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Records a list of historical entries to the resource specified.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.revoke(System.String,System.String,System.String)">revoke</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Given an Activation Code, the associated entity is revoked after which the Activation Code can no longer be used.
+</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.share(System.String,System.String,System.Object)">share</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Generates a share KeyCode for the given ResourceID.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.unmap(System.String,System.String)">unmap</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Unmap the given Alias.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.update(System.String,System.String,System.Object)">update</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Update the description of specifed resource id.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.write(System.String,System.Object[])">write</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>[])<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Writes the given values for the respective resources in the list.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.write(System.String,System.Object[],System.Object)">write</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>[], <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Writes the given values for the respective resources in the list with particular option.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.write(System.String,System.String,System.Object)">write</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Writes a single value to the resource specified.</blockquote></td>
+              </tr>
+              <tr valign="top">
+                <td>
+                  <div>
+                  </div>
+                </td>
+                <td colspan="2">
+                  <b>
+                    <a href="#M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object)">write</a>
+                  </b>(<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>)<nobr> : <a href="../clronep/Result.html">Result</a></nobr><blockquote>Writes a single value to the resource specified with particular option.</blockquote></td>
+              </tr>
+            </table>
+          </div>
+        </blockquote>
+      </blockquote>
+    </div>
+    <div class="Members" id="T:clronep.OnepV1:Members">
+      <h2 class="Section" id="MemberDetails">
+        <a href="javascript:toggle_display('_MemberDetails')">
+          <span id="_MemberDetails:toggle">⊟</span> Member Details</a>
+      </h2>
+      <blockquote class="SectionBox" id="_MemberDetails">
+        <h3 id="C:clronep.OnepV1(System.String,System.Int32)">
+          <a href="javascript:toggle_display('C:clronep.OnepV1(System.String,System.Int32):member')">
+            <span id="C:clronep.OnepV1(System.String,System.Int32):member:toggle">⊟</span> OnepV1 Constructor</a>
+        </h3>
+        <blockquote id="C:clronep.OnepV1(System.String,System.Int32):member">
+          <p class="Summary">This constructor is for http transport.</p>
+          <div class="Signature">public  <b>OnepV1</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> url, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Int32">int</a> timeout)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('C:clronep.OnepV1(System.String,System.Int32):Parameters')">
+              <span id="C:clronep.OnepV1(System.String,System.Int32):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="C:clronep.OnepV1(System.String,System.Int32):Parameters">
+            <dl>
+              <dt>
+                <i>url</i>
+              </dt>
+              <dd>The url of hosted of json-rpc service.</dd>
+              <dt>
+                <i>timeout</i>
+              </dt>
+              <dd>The timeout (second) for json-rpc service call.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('C:clronep.OnepV1(System.String,System.Int32):Remarks')">
+              <span id="C:clronep.OnepV1(System.String,System.Int32):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="C:clronep.OnepV1(System.String,System.Int32):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('C:clronep.OnepV1(System.String,System.Int32):Version Information')">
+              <span id="C:clronep.OnepV1(System.String,System.Int32):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="C:clronep.OnepV1(System.String,System.Int32):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.activate(System.String,System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.activate(System.String,System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.activate(System.String,System.String,System.String):member:toggle">⊟</span> activate Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.activate(System.String,System.String,System.String):member">
+          <p class="Summary">Given an Activation Code, the associated entity is activated for the calling Client.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>activate</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> codetype, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> code)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.activate(System.String,System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>codetype</i>
+              </dt>
+              <dd>Could be "client" or "dispatch" or "share"</dd>
+              <dt>
+                <i>code</i>
+              </dt>
+              <dd>The activation code.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.activate(System.String,System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Returns">
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.activate(System.String,System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.activate(System.String,System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.activate(System.String,System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):member:toggle">⊟</span> comment Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):member">
+          <p class="Summary">Makes a comment entry associated with the calling client and the specified
+resource ID combination, with the specified visibility. Different clients can
+create different comment entries for the same resource. Each client can create
+one comment per resource of each visibility type.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>comment</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> visibility, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> comment)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The id of resource.</dd>
+              <dt>
+                <i>visibility</i>
+              </dt>
+              <dd>Visibility could be either "public" or "private".</dd>
+              <dt>
+                <i>comment</i>
+              </dt>
+              <dd>Comment string for this resoruce.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.comment(System.String,System.String,System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.create(System.String,System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.create(System.String,System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.create(System.String,System.String,System.Object):member:toggle">⊟</span> create Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.create(System.String,System.String,System.Object):member">
+          <p class="Summary">Create a One Platform resource of specified Type and Description.
+</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>create</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> type, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> desc)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.create(System.String,System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>type</i>
+              </dt>
+              <dd>Type could be "client" | "dataport" | "datarule" | "dispatch".</dd>
+              <dt>
+                <i>desc</i>
+              </dt>
+              <dd>
+                <ul>
+                  <li>client </li>
+                </ul>
+
+{
+  "limits":{
+    "client":number | "infinity" :: 0
+   ,"dataport":number | "infinity" :: 0
+   ,"datarule":number | "infinity" :: 0
+   ,"dispatch":number | "infinity" :: 0
+   ,"email":number | "infinity" :: 0
+   ,"http":number | "infinity" :: 0
+   ,"io":number | "infinity" :: 0
+   ,"share":number | "infinity" :: 0
+   ,"sms":number | "infinity" :: 0
+   ,"xmpp":number | "infinity" :: 0
+  }
+ ,"locked":true | false :: false
+ ,"name":string
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+<ul><li>dataport</li></ul>
+
+
+{
+  "format":"binary" | "boolean" | "float" | "integer" | "string"
+ ,"name":string
+ ,"preprocess":[[Operation ,Constant],...]
+ ,"retention":{
+    "count":number :: 0
+   ,"duration":number :: 0
+  }
+ ,"subscribe":ResourceID | null :: null
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+<ul><li>datarule</li></ul>
+
+{
+  "format":"boolean" | "float" | "integer"
+ ,"name":string
+ ,"preprocess":[[Operation ,Constant],...]
+ ,"retention":{
+    "count":number :: 0
+   ,"duration":number :: 0
+  }
+ ,"rule":{
+  % ONE OF:
+    "simple":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"repeat":true | false
+    }
+  % OR
+    "timeout":{
+      "repeat":true | false
+     ,"timeout":number
+    }
+  % OR
+    "interval":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"repeat":true | false
+     ,"timeout":number
+    }
+  % OR
+    "duration":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"repeat":true | false
+     ,"timeout":number
+    }
+  % OR
+    "count":{
+      "comparison":"gt" | "lt" | "eq" | "geq" | "leq" | "neq"
+     ,"constant":number
+     ,"count":number
+     ,"repeat":true | false
+     ,"timeout":number
+    }
+  }
+ ,"subscribe":ResourceID | null :: null
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+<ul><li>dispatch</li></ul>
+
+{
+  "locked":true | false :: false
+ ,"message":string
+ ,"method":"email" | "http_get" | "http_post" | "http_put" | "sms" | "xmpp"
+ ,"name":string
+ ,"preprocess":[[Operation ,Constant],...]
+ ,"recipient":string
+ ,"subject":string
+ ,"subscribe":ResourceID | null :: null
+ ,"visibility":"ancestor" | "parent" | "private" | "public" :: "public"
+}
+
+Preprocess "Operation" -&gt;
+  "add"
+  "sub"
+  "mul"
+  "div"
+  "mod"
+  "gt"
+  "geq"
+  "lt"
+  "leq"
+  "eq"
+  "neq"
+  "value"
+
+Preprocess "Constant" -&gt;
+  number
+  ResourceID</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.create(System.String,System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.create(System.String,System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.create(System.String,System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.create(System.String,System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.deactivate(System.String,System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):member:toggle">⊟</span> deactivate Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):member">
+          <p class="Summary">Given an Activation Code, the associated entity is deactivated for the calling Client.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>deactivate</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> codetype, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> code)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>codetype</i>
+              </dt>
+              <dd>Could be "client" | "dispatch" | "share".</dd>
+              <dt>
+                <i>code</i>
+              </dt>
+              <dd>The activation code.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.deactivate(System.String,System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.drop(System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.drop(System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.drop(System.String,System.String):member:toggle">⊟</span> drop Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.drop(System.String,System.String):member">
+          <p class="Summary">Drop specified and all associated resources and aliases.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>drop</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.drop(System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.drop(System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.drop(System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.drop(System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.drop(System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.drop(System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.drop(System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.drop(System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.drop(System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.drop(System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.drop(System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.drop(System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.flush(System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.flush(System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.flush(System.String,System.String):member:toggle">⊟</span> flush Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.flush(System.String,System.String):member">
+          <p class="Summary">Empty specified resource of all data.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>flush</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.flush(System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.flush(System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.flush(System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.flush(System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.flush(System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.flush(System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.flush(System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.flush(System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.flush(System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.flush(System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.flush(System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.flush(System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.info(System.String,System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.info(System.String,System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.info(System.String,System.String,System.Object):member:toggle">⊟</span> info Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.info(System.String,System.String,System.Object):member">
+          <p class="Summary">Provide creation and usage information of specified resource according to the specified Options (eg, Options could specify to only return the Description).
+</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>info</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> options)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.info(System.String,System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>options</i>
+              </dt>
+              <dd>Each boolean entry defaults to false.  If an empty Options list is given, then
+all are set to true.  Timestamps default to the start of time or the end of time
+depending on their context.
+
+
+
+<ul><li>Not all resource types have the same set of Options.</li></ul>
+{
+  "aliases":true | false
+ ,"basic":true | false
+ ,"comments":true | false
+ ,"description":true | false
+ ,"endtime":number
+ ,"key":true | false
+ ,"usage":true | false
+ ,"shares":true | false
+ ,"starttime":number
+ ,"storage":true | false
+}
+</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.info(System.String,System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.info(System.String,System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.info(System.String,System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.info(System.String,System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.listing(System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.listing(System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.listing(System.String,System.Object):member:toggle">⊟</span> listing Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.listing(System.String,System.Object):member">
+          <p class="Summary">List all resourceids of given type(s).</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>listing</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> types)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.listing(System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.listing(System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.listing(System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>types</i>
+              </dt>
+              <dd>Types could be subset of ["client" ,"dataport" ,"datarule" ,"dispatch"].</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.listing(System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.listing(System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.listing(System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.listing(System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.listing(System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.listing(System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.listing(System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.listing(System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.listing(System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.lookup(System.String,System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.lookup(System.String,System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):member:toggle">⊟</span> lookup Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):member">
+          <p class="Summary">Lookup an aliased resource, or a resource's owner.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>lookup</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> type, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> alias)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.lookup(System.String,System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>type</i>
+              </dt>
+              <dd>Type could be "alias" | "owner".</dd>
+              <dt>
+                <i>alias</i>
+              </dt>
+              <dd>alias string | resource id</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.lookup(System.String,System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.lookup(System.String,System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.lookup(System.String,System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.lookup(System.String,System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.map(System.String,System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.map(System.String,System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.map(System.String,System.String,System.String):member:toggle">⊟</span> map Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.map(System.String,System.String,System.String):member">
+          <p class="Summary">Give the specified ResourceID an alias.  Subsequently the ResourceID can be looked up using the "lookup" method.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>map</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> alias)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.map(System.String,System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.map(System.String,System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.map(System.String,System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>alias</i>
+              </dt>
+              <dd>The alias string.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.map(System.String,System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.map(System.String,System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.map(System.String,System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.map(System.String,System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.map(System.String,System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.map(System.String,System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.map(System.String,System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.map(System.String,System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.map(System.String,System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.read(System.String,System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.read(System.String,System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.read(System.String,System.String,System.Object):member:toggle">⊟</span> read Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.read(System.String,System.String,System.Object):member">
+          <p class="Summary">Read data from the specified resource(s).</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>read</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> options)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.read(System.String,System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>options</i>
+              </dt>
+              <dd>{
+  "starttime":number
+ ,"endtime":number
+ ,"limit":number
+ ,"sort":"asc" | "desc"
+}</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.read(System.String,System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.read(System.String,System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.read(System.String,System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.read(System.String,System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):member')">
+            <span id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):member:toggle">⊟</span> record Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):member">
+          <p class="Summary">Records a list of historical entries to the resource specified.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>record</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>[] entries, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> options)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>entries</i>
+              </dt>
+              <dd>[[timstamp1,data1],[timestamp2,data2],....]</dd>
+              <dt>
+                <i>options</i>
+              </dt>
+              <dd>Currently is empty.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Returns')">
+              <span id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.record(System.String,System.String,System.Object[],System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.revoke(System.String,System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.revoke(System.String,System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):member:toggle">⊟</span> revoke Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):member">
+          <p class="Summary">Given an Activation Code, the associated entity is revoked after which the Activation Code can no longer be used.
+</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>revoke</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> codetype, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> code)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.revoke(System.String,System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>codetype</i>
+              </dt>
+              <dd>"client" | "dispatch" | "share"</dd>
+              <dt>
+                <i>code</i>
+              </dt>
+              <dd>The activation code.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.revoke(System.String,System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.revoke(System.String,System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.revoke(System.String,System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.revoke(System.String,System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.share(System.String,System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.share(System.String,System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.share(System.String,System.String,System.Object):member:toggle">⊟</span> share Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.share(System.String,System.String,System.Object):member">
+          <p class="Summary">Generates a share KeyCode for the given ResourceID.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>share</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> options)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.share(System.String,System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>options</i>
+              </dt>
+              <dd>{
+  "count":number :: 1
+ ,"duration":number | "infinity" :: "infinity"
+}</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.share(System.String,System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.share(System.String,System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.share(System.String,System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.share(System.String,System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.unmap(System.String,System.String)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.unmap(System.String,System.String):member')">
+            <span id="M:clronep.OnepV1.unmap(System.String,System.String):member:toggle">⊟</span> unmap Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.unmap(System.String,System.String):member">
+          <p class="Summary">Unmap the given Alias.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>unmap</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> alias)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.unmap(System.String,System.String):Parameters')">
+              <span id="M:clronep.OnepV1.unmap(System.String,System.String):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.unmap(System.String,System.String):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>alias</i>
+              </dt>
+              <dd>The alias string.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.unmap(System.String,System.String):Returns')">
+              <span id="M:clronep.OnepV1.unmap(System.String,System.String):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.unmap(System.String,System.String):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.unmap(System.String,System.String):Remarks')">
+              <span id="M:clronep.OnepV1.unmap(System.String,System.String):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.unmap(System.String,System.String):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.unmap(System.String,System.String):Version Information')">
+              <span id="M:clronep.OnepV1.unmap(System.String,System.String):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.unmap(System.String,System.String):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.update(System.String,System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.update(System.String,System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.update(System.String,System.String,System.Object):member:toggle">⊟</span> update Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.update(System.String,System.String,System.Object):member">
+          <p class="Summary">Update the description of specifed resource id.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>update</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> desc)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.update(System.String,System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>desc</i>
+              </dt>
+              <dd>See 'create' for Description parameter content.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.update(System.String,System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.update(System.String,System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.update(System.String,System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.update(System.String,System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.write(System.String,System.Object[])">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[]):member')">
+            <span id="M:clronep.OnepV1.write(System.String,System.Object[]):member:toggle">⊟</span> write Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.write(System.String,System.Object[]):member">
+          <p class="Summary">Writes the given values for the respective resources in the list.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>write</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>[] entries)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[]):Parameters')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[]):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[]):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>entries</i>
+              </dt>
+              <dd>[[rid1,data1],[rid2,data2],...]</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[]):Returns')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[]):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[]):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[]):Remarks')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[]):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[]):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[]):Version Information')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[]):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[]):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[],System.Object):member')">
+            <span id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):member:toggle">⊟</span> write Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):member">
+          <p class="Summary">Writes the given values for the respective resources in the list with particular option.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>write</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a>[] entries, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> options)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>entries</i>
+              </dt>
+              <dd>[[rid1,data1],[rid2,data2],...]</dd>
+              <dt>
+                <i>options</i>
+              </dt>
+              <dd>Currently is empty.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Returns')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.Object[],System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.write(System.String,System.String,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object):member')">
+            <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object):member:toggle">⊟</span> write Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.write(System.String,System.String,System.Object):member">
+          <p class="Summary">Writes a single value to the resource specified.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>write</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> value)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The resource id.</dd>
+              <dt>
+                <i>value</i>
+              </dt>
+              <dd>The data value.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+        <h3 id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object)">
+          <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):member')">
+            <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):member:toggle">⊟</span> write Method</a>
+        </h3>
+        <blockquote id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):member">
+          <p class="Summary">Writes a single value to the resource specified with particular option.</p>
+          <div class="Signature">public <a href="../clronep/Result.html">Result</a> <b>write</b> (<a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> clientkey, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.String">string</a> rid, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> value, <a href="http://www.go-mono.com/docs/monodoc.ashx?link=T:System.Object">object</a> options)</div>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Parameters')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Parameters:toggle">⊟</span> Parameters</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Parameters">
+            <dl>
+              <dt>
+                <i>clientkey</i>
+              </dt>
+              <dd>The client identification key.</dd>
+              <dt>
+                <i>rid</i>
+              </dt>
+              <dd>The id of resource.</dd>
+              <dt>
+                <i>value</i>
+              </dt>
+              <dd>The data value.</dd>
+              <dt>
+                <i>options</i>
+              </dt>
+              <dd>Currently is empty.</dd>
+            </dl>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Returns')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Returns:toggle">⊟</span> Returns</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Returns">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Remarks')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Remarks:toggle">⊟</span> Remarks</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Remarks">
+            <span class="NotEntered">Documentation for this section has not yet been entered.</span>
+          </blockquote>
+          <h4 class="Subsection">
+            <a href="javascript:toggle_display('M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Version Information')">
+              <span id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Version Information:toggle">⊟</span> Requirements</a>
+          </h4>
+          <blockquote class="SubsectionBox" id="M:clronep.OnepV1.write(System.String,System.String,System.Object,System.Object):Version Information">
+            <b>Namespace: </b>clronep<br /><b>Assembly: </b>clronep (in clronep.dll)<br /><b>Assembly Versions: </b>1.0.0.0</blockquote>
+          <hr size="1" />
+        </blockquote>
+      </blockquote>
+    </div>
+    <hr size="1" />
+    <div class="Copyright">
+    </div>
+  </body>
+</html>
