@@ -53,7 +53,7 @@ namespace clronep
 			Call[] calls = new Call[] { call };
 			Auth auth = new Auth { cik = parentkey };
 			Request req = new Request { auth = auth, calls = calls };
-			return JsonConvert.SerializeObject (req);
+            return JsonConvert.SerializeObject(req, Formatting.None, new JsonSerializerSettings { NullValueHandling=NullValueHandling.Ignore});
 		}
 		static internal Result parseResponse (string res)
 		{

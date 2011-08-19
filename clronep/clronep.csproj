@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,7 +8,7 @@
     <ProjectGuid>{0683250D-5498-423B-91F2-A1745DF6376C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary1</RootNamespace>
+    <RootNamespace>clronep</RootNamespace>
     <AssemblyName>clronep</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -32,15 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
+    <Reference Include="Newtonsoft.Json.Net35">
+      <HintPath>..\lib\Newtonsoft.Json.Net35.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json.Net20, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
-      <HintPath>..\lib\Newtonsoft.Json.Net20.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataportDescription.cs" />
     <Compile Include="EmptyOption.cs" />
+    <Compile Include="ClientOnepV1.cs" />
     <Compile Include="HttpTransport.cs" />
+    <Compile Include="IDescription.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="JsonHandler.cs" />
     <Compile Include="OneException.cs" />

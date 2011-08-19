@@ -24,92 +24,246 @@ namespace clronep.examples
     class Example
     {
         /// <summary>
-        /// Main method - runs through a sequence of calls that are typical for a given application
+        /// Main method - calls into example sequences for layer 1 API (raw)
+        /// and layer 2 API (buffered, batch)
         /// </summary>
-        public static void Main (string[] args)
+        public static void Main(string[] args)
         {
-            //NOTE: The easiest way to get a Client Interface Key (CIK - "deviceKey") the first time is probably from Exosite Portals https://portals.exosite.com 
-            string deviceKey = "PUTA40CHARACTERCIKHERE";   
-            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/api:v1/rpc/process",3);
+            //NOTE: The easiest way to get a Client Interface Key (CIK) the first time is probably from Exosite Portals https://portals.exosite.com 
+            string cik = "PUTA40CHARACTERCIKHERE";
+            OnepV1Examples(cik);         //Layer 1 (low level) examples
+            ClientOnepV1Examples(cik);   //Layer 2 (batched/overloaded) examples
+        }
+        
+        /// <summary>
+        /// OnepV1Examples method - example sequence for layer 1 calls. Layer 1
+        /// calls are direct bindings to the 1P API.
+        /// </summary>
+        public static void OnepV1Examples(string cik)
+        {
+            //OnepV1(url, timeout)
+            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/api:v1/rpc/process", 3);
             Result result;
-            try{
-                // Get resource id (RID) of dataport given its alias name 'X1'
-                result = oneConn.lookup(deviceKey,"alias","X1");
-                string rid=null;
+            try
+            {
+                // Get resource id of dataport given its alias name 'X1'
+                string alias_name = "X1";
+                result = oneConn.lookup(cik, "alias", alias_name);
+                string rid = null;
                 if (result.status == Result.OK)
                 {
                     rid = result.message;
                 } else {
                     // If dataport with alias 'X1' didn't exist, we will create it
-                    Result obj_newdp = oneConn.create(deviceKey, "dataport", getDescObject());
-                    if (obj_newdp.status == Result.OK)
+                    Console.WriteLine("Could not find Dataport with alias " + alias_name + ", creating...");
+                    result = oneConn.create(cik, "dataport", getDescObject());
+                    if (result.status == Result.OK)
                     {
-                        rid = obj_newdp.message;
-                        Console.WriteLine("Dataport: " + rid + " is created.");
+                        rid = result.message;
+                        result = oneConn.map(cik, rid, alias_name);
+                        Console.WriteLine("Dataport: " + rid + " (" + alias_name + ") is created.");
                     }
                 }
-
+                
                 // Write data to dataport
-                int val = new Random().Next(1,100);
-                result = oneConn.write(deviceKey,rid,val);
-                if (result.status == Result.OK){
-                    Console.WriteLine("Data: " + val + " is written.");
+                int val = new Random().Next(1, 100);
+                result = oneConn.write(cik, rid, val);
+                if (result.status == Result.OK)
+                {
+                    Console.WriteLine("Dataport " + rid + " is written with raw value " + val + ".");
                 }
                 
                 // Read data from dataport
-                result = oneConn.read(deviceKey,rid,EmptyOption.Instance);
-                if (result.status == Result.OK){
-                    object[][] read = JsonConvert.DeserializeObject<object[][]> (result.message);
-                    int data = Int32.Parse( read[0][1].ToString() );
-                    Console.WriteLine("Data: " + data + " is read.");
+                result = oneConn.read(cik, rid, EmptyOption.Instance);
+                if (result.status == Result.OK)
+                {
+                    object[][] read = JsonConvert.DeserializeObject<object[][]>(result.message);
+                    val = Int32.Parse(read[0][1].ToString());
+                    Console.WriteLine("Dataport " + rid + " is read back as: " + val + " (value stored is different from raw write value due to pre-process rule).");
                 }
                 
                 // Create and then drop a dataport (note - a client can have many dataports w/ same name, but alias & RID must be unique)
                 object desc = getDescObject();
-                Result obj1 = oneConn.create(deviceKey,"dataport",desc);
-                if (obj1.status == Result.OK){					
-                    string dprid = obj1.message;
-                    Console.WriteLine("Dataport: " + dprid + " is created.");
-                    string alias = "test_alias";
-                    // Map an alias to the dataport
-                    Result obj2 = oneConn.map(deviceKey,dprid,alias);
-                    if (obj2.status == Result.OK){
-                        Console.WriteLine("Dataport: " + dprid + " is mapped to alias '"+ alias+"'");
+                result = oneConn.create(cik, "dataport", desc);
+                if (result.status == Result.OK)
+                {
+                    rid = result.message;
+                    Console.WriteLine("\r\nDataport: " + rid + " is created.");
+                    alias_name = "test_alias";
+                    // map/unmap alias to dataport
+                    result = oneConn.map(cik, rid, alias_name);
+                    if (result.status == Result.OK)
+                    {
+                        Console.WriteLine("Dataport: " + rid + " is mapped to alias '" + alias_name + "'");
                         // Un-map the alias from the dataport
-                        Result obj3 = oneConn.unmap(deviceKey,alias);
-                        if (obj3.status == Result.OK){
-                            Console.WriteLine("Dataport: " + dprid + " is unmapped from alias '"+ alias+"'");
+                        result = oneConn.unmap(cik, alias_name);
+                        if (result.status == Result.OK)
+                        {
+                            Console.WriteLine("Dataport: " + rid + " is unmapped from alias '" + alias_name + "'");
                         }
                     }
-                    Result obj4 = oneConn.drop(deviceKey,dprid);
-                    if (obj4.status == Result.OK){
-                        Console.WriteLine("Dataport: " + dprid + " is dropped.");
+                    result = oneConn.drop(cik, rid);
+                    if (result.status == Result.OK)
+                    {
+                        Console.WriteLine("Dataport: " + rid + " is dropped.");
                     }
                 }
-
+                
                 // List a client's dataports
-                string[] options = new string[]{"dataport"};
-                result = oneConn.listing(deviceKey,options);
-                if (result.status == Result.OK){
-                    Console.WriteLine("Dataport RIDs for client CIK " + deviceKey + ":");
+                string[] options = new string[] { "dataport" };
+                result = oneConn.listing(cik, options);
+                if (result.status == Result.OK)
+                {
+                    Console.WriteLine("\r\nList of all Dataport RIDs for client CIK " + cik + ":");
                     Console.WriteLine(result.message);
                 }
-                   
-                /* Get all mapping aliases information of dataports */
+                
+                /* Get all mapping alias information for dataports */
                 // Get resource id of device given device key
-                result = oneConn.lookup(deviceKey,"alias","");
-                string deviceRID = result.message;
+                result = oneConn.lookup(cik, "alias", "");
+                rid = result.message;
                 // Get the alias information of given device
-                Dictionary<string,object> option =new Dictionary<string, object>();
-                option.Add("aliases",true);
-                result = oneConn.info(deviceKey,deviceRID,option);
-                if (result.status == Result.OK){
-                    Console.WriteLine("Dataport Alias' for client CIK " + deviceKey + ":");
+                Dictionary<string, object> option = new Dictionary<string, object>();
+                option.Add("aliases", true);
+                result = oneConn.info(cik, rid, option);
+                if (result.status == Result.OK)
+                {
+                    Console.WriteLine("\r\nList of all Dataports with an alias for client CIK " + cik + ":");
                     Console.WriteLine(result.message);
+                    Console.WriteLine("\r\n");
                 }
-            } catch(OneException){
-                //do something for exception.
             }
+            catch (OneException e)
+            {
+                Console.WriteLine("\r\nOnepV1Examples sequence exception:");
+                Console.WriteLine(e.Message); 
+            }
+        }
+        
+        /// <summary>
+        /// ClientOnepV1Examples method - example sequence for Layer 2 calls.
+        /// Layer 2 uses Layer 1, but add some function overloading and batch
+        /// sequences to simplify common use cases
+        /// </summary>
+        public static void ClientOnepV1Examples(string cik)
+        {
+            //ClientOnepV1(url, timeout, cik)
+            ClientOnepV1 conn = new ClientOnepV1("http://m2.exosite.com/api:v1/rpc/process", 3, cik);
+            int val = new Random().Next(1, 100);
+            string alias_name = "X1";
+            string alias2_name = "X2";
+            Result result;
+
+            //write data to alias
+            try
+            {
+                Console.WriteLine("Writing to alias " + alias_name + ":");
+                result = conn.write(alias_name, val);
+                if (result.status == Result.OK)
+                {
+                    Console.WriteLine("Successfully wrote value: " + val + ".\r\n");
+                }
+            }
+            catch(OnePlatformException e)
+            {
+                Console.WriteLine("ClientOnepV1Examples, write exception:");
+                Console.WriteLine(e.Message + "\r\n"); 
+            }            
+            
+            // read data from alias
+            try
+            {
+                Console.WriteLine("Reading from alias " + alias_name + ":");
+                result = conn.read(alias_name);
+                if (result.status == Result.OK)
+                {
+                    object[][] read = JsonConvert.DeserializeObject<object[][]>(result.message);
+                    val = Int32.Parse(read[0][1].ToString());
+                    Console.WriteLine("Successfully read value: " + val + ".\r\n");
+                }
+            }
+            catch (OneException e)
+            { 
+                Console.WriteLine("ClientOnepV1Examples, read exception:");
+                Console.WriteLine(e.Message + "\r\n"); 
+            }
+
+            //create dataport
+            try
+            {
+                Console.WriteLine("Creating a new dataport named " + alias2_name + ":");
+                DataportDescription desc = new DataportDescription("integer");//integer format
+                desc.retention.count = 10;    // only allow 10 data points to be stored to the resource
+                desc.retention.duration = 1; // only allow the platform to keep the data points for 1 hour
+                desc.visibility = "parent";
+                desc.name = "Friendly Name";
+                result = conn.create(alias2_name, desc);
+                if (result.status == Result.OK)
+                {
+                    Console.WriteLine("Success.\r\n");
+                }
+                else Console.WriteLine("Unsuccessful: " + result.status + ".\r\n");
+            }
+            catch (OneException e)
+            {
+                Console.WriteLine("ClientOnepV1Examples, create dataport exception:");
+                Console.WriteLine(e.Message + "\r\n");
+            } 
+            
+            //write group data
+            try
+            {
+                val = new Random().Next(1, 100);
+                Console.WriteLine("Writing value " + val + " to aliases " + alias_name + ", " + alias2_name + " as a group:");
+                Dictionary<string, object> entries = new Dictionary<string, object>();
+                entries.Add(alias_name, val);
+                entries.Add(alias2_name, val);
+                result = conn.write(entries); 
+                //NOTE: this call returns Result.OK regardless if _any_ of the writes were successful or not
+                if (result.status == Result.OK)
+                {
+                    Console.WriteLine("Wrote a value of " + val + " to dataports.\r\n");
+                }
+            }
+            catch (OneException e)
+            { 
+                Console.WriteLine("ClientOnepV1Examples, group write exception:");  
+                Console.WriteLine(e.Message + "\r\n"); 
+            }
+            
+            //get all aliases information
+            Console.WriteLine("Listing all alias information for client:");            
+            Dictionary<string,string> aliasDict = conn.getAllAliasesInfo();
+            foreach( string alias in aliasDict.Keys){
+                string rid = aliasDict[alias];
+                Console.WriteLine(alias + "," + rid);
+            }
+            Console.WriteLine("\r\n");
+            
+            // comment  
+            try
+            {
+                Console.WriteLine("Adding \"unit\" parameter to dataport comment field:"); 
+                Dictionary<string, string> unit = new Dictionary<string, string>();
+                unit.Add("unit", "%");
+                string unitstr = JsonConvert.SerializeObject(unit);
+                //add "unit" using 'comment' method
+                conn.comment(alias_name, "public", unitstr);
+                
+                //get "unit" using 'info' method
+                Dictionary<string, object> option = new Dictionary<string, object>();
+                option.Add("comments", true);
+                result = conn.info(alias_name, option);
+                //Console.WriteLine(res.message);
+                Dictionary<string, object[][]> a = JsonConvert.DeserializeObject<Dictionary<string, object[][]>>(result.message);
+                Dictionary<string, string> b = JsonConvert.DeserializeObject<Dictionary<string, string>>(a["comments"][0][1].ToString());
+                Console.WriteLine("Read back from comment field for parameter \"unit\" as: " + b["unit"] + ".\r\n");              
+            }
+            catch (OneException e)
+            { 
+                Console.WriteLine("ClientOnepV1Examples, comment exception:");
+                Console.WriteLine(e.Message + "\r\n"); 
+            }        
         }
 
         /// <summary>
@@ -128,9 +282,8 @@ namespace clronep.examples
             object[] p1 = new object[]{"add",10};
             object[] preprocess = new object[]{p1};
             desc.Add("preprocess",preprocess);
-            return desc;			
+            return desc;
         }
     }
 }
-
 

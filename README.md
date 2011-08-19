@@ -26,6 +26,14 @@ documentation at http://exosite.com/developers/documentation.
 Release Info
 ========================================
 ----------------------------------------
+Release 0.3
+----------------------------------------
+--) Updated JSON.Net dll to use .NET 3.5 version<br>
+--) Added "layer 2" methods to batch together commonly used functionality<br>
+--) Support for API change in "aliases" return format<br>
+--) Updated example application for API and layer-2 methods<br>
+
+----------------------------------------
 Release 0.2
 ----------------------------------------
 --) added example application<br>
