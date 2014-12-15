@@ -86,13 +86,14 @@ namespace clronep
         {
             return res.status == Result.OK;
         }       
-
+        /*
+         * the comment function has been deprecated in One Platform
         public Result comment(string alias, string visibility, string comments)
         {
             string rid = getRID(alias);
             return comment(_CIK, rid, visibility, comments);
         }
-
+        */
         public Result create(string alias, IDescription desc)
         {
             if (desc is DataportDescription)

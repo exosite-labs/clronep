@@ -240,6 +240,8 @@ namespace clronep.examples
             }
             Console.WriteLine("\r\n");
             
+            /* The comment function has been deprecated in One Platform.  The unit parameter is 
+             * now stored in the meta field of clients by Portals.
             // comment  
             try
             {
@@ -263,7 +265,10 @@ namespace clronep.examples
             { 
                 Console.WriteLine("ClientOnepV1Examples, comment exception:");
                 Console.WriteLine(e.Message + "\r\n"); 
-            }        
+            }  
+             * 
+             * 
+             */
         }
 
         /// <summary>

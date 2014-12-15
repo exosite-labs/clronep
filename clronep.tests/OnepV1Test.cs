@@ -34,7 +34,7 @@ namespace clronep
 			Thread.Sleep(1000);//sleep 1 second
 			conn = new OnepV1("http://m2.exosite.com/api:v1/rpc/process",3);//timeout 3 seconds
 		}
-		
+		/*
 		[Test]
 		public void comment(){
 			string visibility = "public";
@@ -42,7 +42,7 @@ namespace clronep
 			Result obj1 = conn.comment(clientKey,rid,visibility,comment);
 			Assert.AreEqual(Result.OK,obj1.status);
 		}
-		
+		*/
 		[Test]
 		public void createdrop(){
 			object desc = getDescObject();
