@@ -30,9 +30,9 @@ Release Info
 Release 0.5
 ----------------------------------------
 --) Add proxy and connect_as support in in OnepV1<br>
---) Modify OnepV1 listing call to take empty options
---) Update all OnepV1 calls that take an RID to take RID as object or a string
---) Remove support for the comment RPC which was deprecated in One Platform
+--) Modify OnepV1 listing call to take empty options<br>
+--) Update all OnepV1 calls that take an RID to take RID as object or a string<br>
+--) Remove support for the comment RPC which was deprecated in One Platform<br>
 
 ----------------------------------------
 Release 0.4
