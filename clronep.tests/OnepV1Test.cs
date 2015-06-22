@@ -32,7 +32,7 @@ namespace clronep
 		[SetUp]
 		public void Init(){
 			Thread.Sleep(1000);//sleep 1 second
-            conn = new OnepV1("http://m2.exosite.com/onep:v1/stack/alias", 3);//timeout 3 seconds
+            conn = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3);//timeout 3 seconds
 		}
 		/*
 		[Test]
