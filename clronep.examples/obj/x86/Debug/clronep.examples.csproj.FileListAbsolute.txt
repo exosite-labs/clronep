@@ -1,3 +1,0 @@
-C:\Users\Dan Letscher\Desktop\clronep\clronep.examples\bin\Debug\clronep.examples.exe.config
-C:\Users\Dan Letscher\Desktop\clronep\clronep.examples\obj\x86\Debug\clronep.examples.exe
-C:\Users\Dan Letscher\Desktop\clronep\clronep.examples\obj\x86\Debug\clronep.examples.pdb
