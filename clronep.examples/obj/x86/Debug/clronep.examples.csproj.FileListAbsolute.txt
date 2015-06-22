@@ -1,12 +1,3 @@
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\bin\Debug\clronep.examples.exe.config
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\bin\Debug\clronep.examples.exe
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\bin\Debug\clronep.examples.pdb
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\bin\Debug\clronep.dll
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\bin\Debug\Newtonsoft.Json.Net35.dll
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\bin\Debug\clronep.pdb
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\obj\x86\Debug\clronep.examples.csprojResolveAssemblyReference.cache
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\obj\x86\Debug\clronep.examples.exe
-C:\Users\Dan Letscher\Documents\clronep\clronep.examples\obj\x86\Debug\clronep.examples.pdb
 C:\Users\Dan Letscher\Desktop\clronep\clronep.examples\bin\Debug\clronep.examples.exe.config
 C:\Users\Dan Letscher\Desktop\clronep\clronep.examples\obj\x86\Debug\clronep.examples.exe
 C:\Users\Dan Letscher\Desktop\clronep\clronep.examples\obj\x86\Debug\clronep.examples.pdb
