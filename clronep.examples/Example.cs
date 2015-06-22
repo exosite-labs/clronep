@@ -14,7 +14,7 @@
 using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-
+using System.Threading;
 namespace clronep.examples
 {
     /// <summary>
@@ -42,7 +42,7 @@ namespace clronep.examples
         public static void OnepV1Examples(string cik)
         {
             //OnepV1(url, timeout)
-            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/api:v1/rpc/process", 3);
+            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3);
             Result result;
             try
             {
@@ -148,7 +148,7 @@ namespace clronep.examples
         public static void ClientOnepV1Examples(string cik)
         {
             //ClientOnepV1(url, timeout, cik)
-            ClientOnepV1 conn = new ClientOnepV1("http://m2.exosite.com/api:v1/rpc/process", 3, cik);
+            ClientOnepV1 conn = new ClientOnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3, cik);
             int val = new Random().Next(1, 100);
             string alias_name = "X1";
             string alias2_name = "X2";
@@ -218,7 +218,7 @@ namespace clronep.examples
                 Dictionary<string, object> entries = new Dictionary<string, object>();
                 entries.Add(alias_name, val);
                 entries.Add(alias2_name, val);
-                result = conn.write(entries); 
+                result = conn.writegroup(entries); 
                 //NOTE: this call returns Result.OK regardless if _any_ of the writes were successful or not
                 if (result.status == Result.OK)
                 {

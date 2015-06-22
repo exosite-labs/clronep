@@ -27,6 +27,10 @@ Release Info
 ========================================
 
 ----------------------------------------
+Release 0.6
+----------------------------------------
+--) Add writegroup RPC method, update tests accordingly
+----------------------------------------
 Release 0.5
 ----------------------------------------
 --) Add proxy and connect_as support in in OnepV1<br>

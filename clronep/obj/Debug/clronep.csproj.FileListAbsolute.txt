@@ -1,0 +1,5 @@
+C:\Users\Dan Letscher\Documents\clronep\clronep\bin\Debug\clronep.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep\bin\Debug\clronep.pdb
+C:\Users\Dan Letscher\Documents\clronep\clronep\bin\Debug\Newtonsoft.Json.Net35.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep\obj\Debug\clronep.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep\obj\Debug\clronep.pdb

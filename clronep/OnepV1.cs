@@ -10,6 +10,8 @@
 */
 
 using System;
+using System.Collections.Generic;
+using System.Collections;
 namespace clronep
 {
     public class OnepV1
@@ -209,6 +211,16 @@ namespace clronep
         {
             object[] argu = new object[] { entries, options };
             return callRPC(clientkey, "write", argu);
+        }
+        public Result writegroup(string clientkey, Dictionary<string, object> entries)
+        {
+            object[] argu = new object[] { entries };
+            return callRPC(clientkey, "writegroup", argu);
+        }
+        public Result writegroup(string clientkey, Dictionary<string, object> entries, object options)
+        {
+            object[] argu = new object[] { entries, options };
+            return callRPC(clientkey, "writegroup", argu);
         }
     }
 }

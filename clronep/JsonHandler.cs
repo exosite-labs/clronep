@@ -12,6 +12,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -51,6 +52,21 @@ namespace clronep
         }
         static internal string getRequest(string parentkey, string proc, object[] args)
         {
+            if (proc == "writegroup")
+            {
+                List<object> newArgs = new List<object>();
+                foreach (Dictionary<string, object> dict in args)
+                {
+                    foreach (KeyValuePair<string, object> kvp in dict)
+                    {
+                        object[] formattingArray = new object[2];
+                        formattingArray[0] = kvp.Key;
+                        formattingArray[1] = kvp.Value;
+                        newArgs.Add(formattingArray);
+                    }
+                    args[0] = newArgs.ToArray();
+                }
+            }
             Call call = new Call { id = 1, procedure = proc, arguments = args };
             Call[] calls = new Call[] { call };
             Auth auth = new Auth { cik = parentkey };
@@ -59,6 +75,21 @@ namespace clronep
         }
         static internal string getRequest(string parentkey, string id, string proc, object[] args, bool connect_as)
         {
+            if (proc == "writegroup")
+            {
+                List<object> newArgs = new List<object>();
+                foreach (Dictionary<string, object> dict in args)
+                {
+                    foreach (KeyValuePair<string, object> kvp in dict)
+                    {
+                        object[] formattingArray = new object[2];
+                        formattingArray[0] = kvp.Key;
+                        formattingArray[1] = kvp.Value;
+                        newArgs.Add(formattingArray);
+                    }
+                    args[0] = newArgs.ToArray();
+                }
+            }
             Call call = new Call { id = 1, procedure = proc, arguments = args };
             Call[] calls = new Call[] { call };
             Auth auth;

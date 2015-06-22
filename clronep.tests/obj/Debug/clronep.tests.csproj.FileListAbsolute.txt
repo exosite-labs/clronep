@@ -1,0 +1,9 @@
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\bin\Debug\clronep.tests.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\bin\Debug\clronep.tests.pdb
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\bin\Debug\clronep.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\bin\Debug\nunit.framework.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\bin\Debug\Newtonsoft.Json.Net35.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\bin\Debug\clronep.pdb
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\obj\Debug\clronep.tests.csprojResolveAssemblyReference.cache
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\obj\Debug\clronep.tests.dll
+C:\Users\Dan Letscher\Documents\clronep\clronep.tests\obj\Debug\clronep.tests.pdb
