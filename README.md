@@ -30,6 +30,7 @@ Release Info
 Release 0.6
 ----------------------------------------
 --) Add writegroup RPC method, update tests accordingly
+--) Rename record to recordbatch
 
 ----------------------------------------
 Release 0.5
