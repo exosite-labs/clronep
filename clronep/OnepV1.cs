@@ -203,6 +203,26 @@ namespace clronep
             object[] argu = new object[] { rid, metric, starttime, endtime };
             return callRPC(clientkey, "usage", argu);
         }
+        public Result wait(string clientkey, string rid)
+        {
+            object[] argu = new object[] { rid, EmptyOption.Instance };
+            return callRPC(clientkey, "wait", argu);
+        }
+        public Result wait(string clientkey, object rid)
+        {
+            object[] argu = new object[] { rid, EmptyOption.Instance };
+            return callRPC(clientkey, "wait", argu);
+        }
+        public Result wait(string clientkey, string rid, object options)
+        {
+            object[] argu = new object[] { rid, options };
+            return callRPC(clientkey, "wait", argu);
+        }
+        public Result wait(string clientkey, object rid, object options)
+        {
+            object[] argu = new object[] { rid, options };
+            return callRPC(clientkey, "wait", argu);
+        }
         public Result write(string clientkey, string rid, object value)
         {
             object[] argu = new object[] { rid, value, EmptyOption.Instance };
