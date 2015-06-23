@@ -142,15 +142,15 @@ namespace clronep
             object[] argu = new object[] { rid, options };
             return callRPC(clientkey, "read", argu);
         }
-        public Result record(string clientkey, string rid, object[] entries, object options)
+        public Result recordbatch(string clientkey, string rid, object[] entries, object options)
         {
             object[] argu = new object[] { rid, entries, options };
-            return callRPC(clientkey, "record", argu);
+            return callRPC(clientkey, "recordbatch", argu);
         }
-        public Result record(string clientkey, object rid, object[] entries, object options)
+        public Result recordbatch(string clientkey, object rid, object[] entries, object options)
         {
             object[] argu = new object[] { rid, entries, options };
-            return callRPC(clientkey, "record", argu);
+            return callRPC(clientkey, "recordbatch", argu);
         }
         public Result revoke(string clientkey, string codetype, string code)
         {

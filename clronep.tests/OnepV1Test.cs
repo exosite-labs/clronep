@@ -133,11 +133,11 @@ namespace clronep
 		}
 		
 		[Test]
-		public void record(){
+		public void recordbatch(){
 			object[] data1 = new object[]{-2,1};
 			object[] data2 = new object[]{-1,2};	
 			object[] entries =	new object[]{data1,data2};
-			Result obj = conn.record(clientKey,rid,entries,EmptyOption.Instance);
+			Result obj = conn.recordbatch(clientKey,rid,entries,EmptyOption.Instance);
 			Assert.AreEqual(Result.OK,obj.status);	
 		}
 		
