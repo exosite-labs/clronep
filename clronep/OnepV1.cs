@@ -142,6 +142,17 @@ namespace clronep
             object[] argu = new object[] { rid, options };
             return callRPC(clientkey, "read", argu);
         }
+        //Record is deprecated, use recordbatch
+        public Result record(string clientkey, string rid, object[] entries, object options)
+        {
+            object[] argu = new object[] { rid, entries, options };
+            return callRPC(clientkey, "record", argu);
+        }
+        public Result record(string clientkey, object rid, object[] entries, object options)
+        {
+            object[] argu = new object[] { rid, entries, options };
+            return callRPC(clientkey, "record", argu);
+        }
         public Result recordbatch(string clientkey, string rid, object[] entries, object options)
         {
             object[] argu = new object[] { rid, entries, options };
@@ -181,6 +192,16 @@ namespace clronep
         {
             object[] argu = new object[] { rid, desc };
             return callRPC(clientkey, "update", argu);
+        }
+        public Result usage(string clientkey, string rid, string metric, int starttime, int endtime)
+        {
+            object[] argu = new object[] { rid, metric, starttime, endtime };
+            return callRPC(clientkey, "usage", argu);
+        }
+        public Result usage(string clientkey, object rid, string metric, int starttime, int endtime)
+        {
+            object[] argu = new object[] { rid, metric, starttime, endtime };
+            return callRPC(clientkey, "usage", argu);
         }
         public Result write(string clientkey, string rid, object value)
         {
