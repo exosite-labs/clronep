@@ -13,6 +13,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Net;
+using System.Collections.Generic;
 
 namespace clronep
 {
@@ -48,6 +49,62 @@ namespace clronep
             request.ContentType = "application/json; charset=utf-8";
             request.Method = "POST";
             request.Timeout = Timeout * 1000;
+            byte[] bytes = Encoding.UTF8.GetBytes(message);
+            request.ContentLength = bytes.Length;
+            Stream stream = null;
+            HttpWebResponse response = null;
+            StreamReader reader = null;
+            try
+            {
+                stream = request.GetRequestStream();
+                stream.Write(bytes, 0, bytes.Length);
+            }
+            catch (System.Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw new HttpRPCRequestException("Unable to make http request.");
+            }
+            finally
+            {
+                if (stream != null)
+                {
+                    stream.Close();
+                }
+            }
+            try
+            {
+                response = (HttpWebResponse)request.GetResponse();
+                if (response == null) { return null; }
+                reader = new StreamReader(response.GetResponseStream());
+                string recv = reader.ReadToEnd();
+                return recv;
+            }
+            catch (System.Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw new HttpRPCResponseException("Unable to get http response.");
+            }
+            finally
+            {
+                if (response != null)
+                {
+                    response.Close();
+                }
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+            }
+        }
+        public string provisionSend(string message, string method, string url, WebHeaderCollection headers)
+        {
+            Url += url;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            if (null != this.ProxyServer)
+                request.Proxy = this.ProxyServer;
+            request.Method = method;
+            request.Timeout = Timeout * 1000;
+            request.Headers = headers;
             byte[] bytes = Encoding.UTF8.GetBytes(message);
             request.ContentLength = bytes.Length;
             Stream stream = null;
