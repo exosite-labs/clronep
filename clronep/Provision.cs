@@ -72,8 +72,10 @@ namespace clronep
             if (method == "POST")
                 headers.Add("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
             headers.Add("Accept", "text/plain, text/csv, application/x-www-form-urlencoded");
+            if (extra_headers != null) { 
             foreach (string webkey in extra_headers.Keys)
                 headers.Add(webkey, extra_headers[webkey]);
+                }
             string response = transport.provisionSend(body, method, url, headers);
             return JsonHandler.parseResponse(response);
         }
@@ -148,12 +150,13 @@ namespace clronep
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("model", model);
             parameters.Add("rid", clonerid);
-            parameters.Add("options[]", options.ToString());
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
+            foreach (string s in options)
+                if (s != null) dataList.Add(String.Concat("options[]", "=", Uri.EscapeDataString(s)));
             string data = String.Join("&", dataList.ToArray());
-            return request(PROVISION_MANAGE_MODEL + model, key, "", "GET", manage_by_cik, null);
+            return request(PROVISION_MANAGE_MODEL, key, data, "POST", manage_by_cik, null);
         }
         public Result model_info(string key, string model)
         {
@@ -181,10 +184,15 @@ namespace clronep
             string[] options = filter_options(aliases, comments, historical);
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("rid", clonerid);
-            parameters.Add("options[]", options.ToString());
+            foreach (string s in options)
+            {
+                parameters.Add("options[]", s);
+            }
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
+            foreach (string s in options)
+                if (s != null) dataList.Add(String.Concat("options[]", "=", Uri.EscapeDataString(s)));
             string data = String.Join("&", dataList.ToArray());
             string path = PROVISION_MANAGE_MODEL + model;
             return request(path, key, data, "PUT", manage_by_cik, null);

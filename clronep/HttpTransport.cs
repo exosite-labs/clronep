@@ -104,27 +104,88 @@ namespace clronep
                 request.Proxy = this.ProxyServer;
             request.Method = method;
             request.Timeout = Timeout * 1000;
-            request.Headers = headers;
-            byte[] bytes = Encoding.UTF8.GetBytes(message);
-            request.ContentLength = bytes.Length;
-            Stream stream = null;
+            if (headers["Accept"] != null)
+            {
+                request.Accept = headers["Accept"];
+                headers.Remove("Accept");
+            }
+            if (headers["Connection"] != null)
+            {
+                request.Connection = headers["Connection"];
+                headers.Remove("Connection");
+            }
+            if (headers["Content-Length"] != null)
+            {
+                request.ContentLength = Convert.ToInt64(headers["Content-Length"]);
+                headers.Remove("Content-Length");
+            }
+            if (headers["Content-Type"] != null)
+            {
+                request.ContentType = headers["Content-Type"];
+                headers.Remove("Content-Type");
+            }
+            if (headers["Expect"] != null)
+            {
+                request.Expect = headers["Expect"];
+                headers.Remove("Expect");
+            }
+            if (headers["If-Modified-Since"] != null)
+            {
+                request.IfModifiedSince = Convert.ToDateTime(headers["If-Modified-Since"]);
+                headers.Remove("If-Modified-Since");
+            }
+            if (headers["Range"] != null)
+            {
+                request.AddRange(Convert.ToInt32(headers["Range"]));
+                headers.Remove("Range");
+            }
+            if (headers["Referer"] != null)
+            {
+                request.Referer = headers["Referer"];
+                headers.Remove("Referer");
+            }
+            if (headers["Transfer-Encoding"] != null)
+            {
+                request.TransferEncoding = headers["Transfer-Encoding"];
+                headers.Remove("Transfer-Encoding");
+            }
+            if (headers["User-Agent"] != null)
+            {
+                request.UserAgent = headers["User-Agent"];
+                headers.Remove("User-Agent");
+            }
+            foreach (string key in headers.Keys)
+            {
+                if (request.Headers[key] != null) 
+                {
+                    request.Headers.Set(key, headers[key]);
+                }
+                else request.Headers.Add(key, headers[key]);
+            }
             HttpWebResponse response = null;
             StreamReader reader = null;
-            try
+            if (message != null)
             {
-                stream = request.GetRequestStream();
-                stream.Write(bytes, 0, bytes.Length);
-            }
-            catch (System.Exception e)
-            {
-                Console.WriteLine(e.Message);
-                throw new HttpRPCRequestException("Unable to make http request.");
-            }
-            finally
-            {
-                if (stream != null)
+                byte[] bytes = Encoding.UTF8.GetBytes(message);
+                request.ContentLength = bytes.Length;
+                Stream stream = null;
+                
+                try
                 {
-                    stream.Close();
+                    stream = request.GetRequestStream();
+                    stream.Write(bytes, 0, bytes.Length);
+                }
+                catch (System.Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw new HttpRPCRequestException("Unable to make http request.");
+                }
+                finally
+                {
+                    if (stream != null)
+                    {
+                        stream.Close();
+                    }
                 }
             }
             try
