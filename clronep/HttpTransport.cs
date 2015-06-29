@@ -96,10 +96,10 @@ namespace clronep
                 }
             }
         }
-        public string provisionSend(string message, string method, string url, WebHeaderCollection headers)
+        public string[] provisionSend(string message, string method, string url, WebHeaderCollection headers)
         {
-            Url += url;
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+            url = Url + url;
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             if (null != this.ProxyServer)
                 request.Proxy = this.ProxyServer;
             request.Method = method;
@@ -164,12 +164,12 @@ namespace clronep
             }
             HttpWebResponse response = null;
             StreamReader reader = null;
+            Stream stream = null;
+            byte[] bytes = null;
             if (message != null)
             {
-                byte[] bytes = Encoding.UTF8.GetBytes(message);
+                bytes = Encoding.UTF8.GetBytes(message);
                 request.ContentLength = bytes.Length;
-                Stream stream = null;
-                
                 try
                 {
                     stream = request.GetRequestStream();
@@ -194,7 +194,18 @@ namespace clronep
                 if (response == null) { return null; }
                 reader = new StreamReader(response.GetResponseStream());
                 string recv = reader.ReadToEnd();
-                return recv;
+                string statuscode;
+                if (HttpStatusCode.OK == response.StatusCode || HttpStatusCode.ResetContent == response.StatusCode || HttpStatusCode.NoContent == response.StatusCode)
+                {
+                    statuscode = response.StatusCode.ToString();
+                    recv = statuscode + "\r\n" + recv;
+                }
+                else
+                {
+                    statuscode = "FAIL";
+                    recv = statuscode + "\r\n" + recv;
+                }
+                return new string[2] {statuscode, recv};
             }
             catch (System.Exception e)
             {

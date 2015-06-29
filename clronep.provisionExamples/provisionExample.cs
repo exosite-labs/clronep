@@ -11,7 +11,7 @@ namespace clronep.provisionExamples
         {
             string vendorname = "danco";
             string vendortoken = "41e89dea09cd1df8da4906ed0c486384cc3692fa";
-            string clonecik = "adeaef9327f82d2678be75157e0f6ee8fbf6eb4f";
+            string clonecik = "4d394ff050655d4a28bf4f7ece1df3482532860f";
             string portalcik = "f5a0169e04afb39f6e53d19980beccfe92cf5beb";
 
             int r = new Random().Next(1, 10000000);
@@ -35,26 +35,26 @@ namespace clronep.provisionExamples
             {
                 clonerid = cloneridResult.message;
                 Console.WriteLine("\r\nclonerid: " + clonerid);
-                provision = new Provision("http://m2.exosite.com", 3, false);
+                provision = new Provision("http://danco.m2.exosite.com", 3, false);
             }
             else Console.WriteLine("\r\nFailed to look up clone RID");
             try
             {
                 Console.WriteLine("\r\nmodel_create()");
-                provision.model_create(vendortoken, model, clonerid, false, true, true);
-                Console.WriteLine("\r\n"+provision.model_list(vendortoken).message);
-                Console.WriteLine("\r\n" + provision.model_info(vendortoken, model).message);
+                Console.WriteLine("\r\n" + provision.model_create(vendortoken, model, clonerid, false, true, true).message);
+                Console.WriteLine("\r\nmodel_list()\r\n"+provision.model_list(vendortoken).message);
+                Console.WriteLine("\r\nmodel_info()\r\n" + provision.model_info(vendortoken, model).message);
                 Console.WriteLine("\r\nserialnumber_add()");
-                provision.serialnumber_add(vendortoken, model, sn1);
+                Console.WriteLine("\r\n" + provision.serialnumber_add(vendortoken, model, sn1).message);
                 Console.WriteLine("\r\nserialnumber_add_batch()");
                 string[] sn2andsn3 = new string[2];
                 sn2andsn3[0] = sn2;
                 sn2andsn3[1] = sn3;
-                provision.serialnumber_add_batch(vendortoken, model, sn2andsn3);
-                Console.WriteLine(provision.serialnumber_list(vendortoken, model, 0, 10).message);
+                Console.WriteLine("\r\n" + provision.serialnumber_add_batch(vendortoken, model, sn2andsn3).message);
+                Console.WriteLine("\r\nserialnumber_list()\r\n" + provision.serialnumber_list(vendortoken, model, 0, 10).message);
                 Console.WriteLine("\r\nserialnumber_remove_batch()");
-                provision.serialnumber_remove_batch(vendortoken, model, sn2andsn3);
-                Console.WriteLine(provision.serialnumber_list(vendortoken, model, 0, 1000).message);
+                Console.WriteLine("\r\n" + provision.serialnumber_remove_batch(vendortoken, model, sn2andsn3).message);
+                Console.WriteLine("\r\nserialnumber_list()\r\n" + provision.serialnumber_list(vendortoken, model, 0, 1000).message);
                 Console.WriteLine("\r\nserialnumber_enable()"); 
                 provision.serialnumber_enable(vendortoken, model, sn1, portalrid); //return clientid
                 Console.WriteLine("\r\nAFTER ENABLE: " + provision.serialnumber_info(vendortoken, model, sn1).message);

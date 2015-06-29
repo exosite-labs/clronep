@@ -76,8 +76,8 @@ namespace clronep
             foreach (string webkey in extra_headers.Keys)
                 headers.Add(webkey, extra_headers[webkey]);
                 }
-            string response = transport.provisionSend(body, method, url, headers);
-            return JsonHandler.parseResponse(response);
+            string[] response = transport.provisionSend(body, method, url, headers);
+            return JsonHandler.parseProvisionResponse(response[1], response[0]);
         }
 
         public Result content_create(string key, string model, string contentid, string meta, bool protect)
@@ -264,14 +264,14 @@ namespace clronep
         public Result serialnumber_list(string key, string model, int offset, int limit)
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters.Add("offset", limit.ToString());
+            parameters.Add("offset", offset.ToString());
             parameters.Add("limit", limit.ToString());
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
             string data = String.Join("&", dataList.ToArray());
             string path = PROVISION_MANAGE_MODEL + model + "/";
-            return request(path, key, data, "POST", manage_by_cik, null);
+            return request(path, key, data, "GET", manage_by_cik, null);
         }
         public Result serialnumber_reenable(string key, string model, string serialnumber)
         {
