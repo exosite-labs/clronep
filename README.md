@@ -27,6 +27,11 @@ Release Info
 ========================================
 
 ----------------------------------------
+Release 0.7
+----------------------------------------
+--) Add provisioning support and example<br>
+
+----------------------------------------
 Release 0.6
 ----------------------------------------
 --) Add writegroup RPC method, update tests accordingly<br>

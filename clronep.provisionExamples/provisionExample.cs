@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace clronep.provisionExamples
 {
@@ -12,6 +10,7 @@ namespace clronep.provisionExamples
             string vendorname = "VENDORNAMEHERE";
             string vendortoken = "VENDORTOKENHERE";
             string clonecik = "CLONECIKHERE";
+            string cloneportalcik = "CLONEPORTALCIKHERE"; //use only if managing by sharecode
             string portalcik = "PORTALCIKHERE";
 
             int r = new Random().Next(1, 10000000);
@@ -35,13 +34,20 @@ namespace clronep.provisionExamples
             {
                 clonerid = cloneridResult.message;
                 Console.WriteLine("\r\nclonerid: " + clonerid);
-                provision = new Provision("http://*VENDOR.m2.exosite.com", 3, false);
+                provision = new Provision("http://*VENDOR.m2.exosite.com", 3, false, true);
             }
             else Console.WriteLine("\r\nFailed to look up clone RID");
+            Dictionary<string, string> meta = new Dictionary<string, string>();
+            string[] options = new string[2];
+            options[0] = vendorname;
+            options[1] = model;
+            string option = "[" + "\"" + vendorname + "\"" + ", " + "\"" + model + "\"" + "]";
+            meta.Add("meta", option);
+            string sharecode = op.share(cloneportalcik, clonerid, meta).message;
             try
             {
                 Console.WriteLine("\r\nmodel_create()");
-                Console.WriteLine("\r\n" + provision.model_create(vendortoken, model, clonerid, false, true, true).message);
+                Console.WriteLine("\r\n" + provision.model_create(vendortoken, model, sharecode, false, true, true).message);
                 Console.WriteLine("\r\nmodel_list()\r\n"+provision.model_list(vendortoken).message);
                 Console.WriteLine("\r\nmodel_info()\r\n" + provision.model_info(vendortoken, model).message);
                 Console.WriteLine("\r\nserialnumber_add()");
@@ -70,10 +76,10 @@ namespace clronep.provisionExamples
                 Console.WriteLine("\r\nAFTER ACTIVATE: " + provision.serialnumber_info(vendortoken, model, sn1).message);
 
                 Console.WriteLine("\r\ncontent_create()");
-                provision.content_create(vendortoken, model, "a.txt", "This is text", false);
+                Console.WriteLine("\r\n" + provision.content_create(vendortoken, model, "a.txt", "This is text", false).message);
                 Console.WriteLine("\r\ncontent_upload()");
-                Console.WriteLine(provision.content_upload(vendortoken, model, "a.txt", "This is content data", "text/plain"));
-                Console.WriteLine(provision.content_list(vendortoken, model));
+                Console.WriteLine("\r\n" + provision.content_upload(vendortoken, model, "a.txt", "This is content data", "text/plain").message);
+                Console.WriteLine("\r\ncontent_list()\r\n" + provision.content_list(vendortoken, model).message);
                 Console.WriteLine(vendortoken, model, "a.txt");
                 Console.WriteLine("\r\ncontent_remove()");
                 provision.content_remove(vendortoken, model, "a.txt");

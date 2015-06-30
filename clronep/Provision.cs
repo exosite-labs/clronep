@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
-using System.Web;
 using System.Net;
 
 namespace clronep
@@ -20,11 +16,13 @@ namespace clronep
 
         private HttpTransport transport;
         private bool manage_by_cik;
+        private bool manage_by_sharecode;
 
-        public Provision(string url, int timeout, bool managebycik)
+        public Provision(string url, int timeout, bool managebycik, bool managebysharecode)
         {
             transport = new HttpTransport(url, timeout);
             manage_by_cik = managebycik;
+            manage_by_sharecode = managebysharecode;
         }
 
         private string[] filter_options(bool aliases, bool comments, bool historical)
@@ -144,12 +142,13 @@ namespace clronep
             string path = PROVISION_MANAGE_CONTENT + model + "/" + contentid;
             return request(path, key, data, "POST", manage_by_cik, headers);
         }
-        public Result model_create(string key, string model, string clonerid, bool aliases, bool comments, bool historical)
+        public Result model_create(string key, string model, string sharecode, bool aliases, bool comments, bool historical)
         {
             string[] options = filter_options(aliases, comments, historical);
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("model", model);
-            parameters.Add("rid", clonerid);
+            if (manage_by_sharecode) parameters.Add("code", sharecode);
+            else parameters.Add("rid", sharecode);
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
@@ -184,10 +183,6 @@ namespace clronep
             string[] options = filter_options(aliases, comments, historical);
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("rid", clonerid);
-            foreach (string s in options)
-            {
-                parameters.Add("options[]", s);
-            }
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
@@ -225,10 +220,11 @@ namespace clronep
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("add", "true");
-            parameters.Add("sn[]", sns.ToString());
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
+            foreach (string sn in sns)
+                dataList.Add(String.Concat("sn[]", "=", Uri.EscapeDataString(sn)));
             string data = String.Join("&", dataList.ToArray());
             string path = PROVISION_MANAGE_MODEL + model + "/";
             return request(path, key, data, "POST", manage_by_cik, null);
@@ -305,10 +301,11 @@ namespace clronep
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
             parameters.Add("remove", "true");
-            parameters.Add("sn[]", sns.ToString());
             List<string> dataList = new List<string>();
             foreach (string s in parameters.Keys)
                 dataList.Add(String.Concat(s, "=", Uri.EscapeDataString(parameters[s])));
+            foreach (string sn in sns)
+                dataList.Add(String.Concat("sn[]", "=", Uri.EscapeDataString(sn)));
             string data = String.Join("&", dataList.ToArray());
             string path = PROVISION_MANAGE_MODEL + model + "/";
             return request(path, key, data, "POST", manage_by_cik, null);
