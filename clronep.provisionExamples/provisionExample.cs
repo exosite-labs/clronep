@@ -7,11 +7,13 @@ namespace clronep.provisionExamples
     {
         static void Main(string[] args)
         {
-            string vendorname = "VENDORNAMEHERE";
-            string vendortoken = "VENDORTOKENHERE";
-            string clonecik = "CLONECIKHERE";
-            string cloneportalcik = "CLONEPORTALCIKHERE"; //use only if managing by sharecode
-            string portalcik = "PORTALCIKHERE";
+            provisionForm frm = new provisionForm();
+            frm.ShowDialog();
+            string vendorname = frm.vendorname;
+            string vendortoken = frm.vendortoken;
+            string clonecik = frm.clonecik;
+            string cloneportalcik = frm.cloneportalcik; //use only if managing by sharecode
+            string portalcik = frm.portalcik;
 
             int r = new Random().Next(1, 10000000);
             string model = "MyTestModel" + r.ToString();
@@ -34,7 +36,7 @@ namespace clronep.provisionExamples
             {
                 clonerid = cloneridResult.message;
                 Console.WriteLine("\r\nclonerid: " + clonerid);
-                provision = new Provision("http://*VENDOR.m2.exosite.com", 3, false, true);
+                provision = new Provision("http://m2.exosite.com", 3, false, true);
             }
             else Console.WriteLine("\r\nFailed to look up clone RID");
             Dictionary<string, string> meta = new Dictionary<string, string>();

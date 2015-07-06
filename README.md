@@ -30,6 +30,7 @@ Release Info
 Release 0.7
 ----------------------------------------
 --) Add provisioning support and example<br>
+--) Add UI for examples
 
 ----------------------------------------
 Release 0.6

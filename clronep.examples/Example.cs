@@ -30,7 +30,10 @@ namespace clronep.examples
         public static void Main(string[] args)
         {
             //NOTE: The easiest way to get a Client Interface Key (CIK) the first time is probably from Exosite Portals https://portals.exosite.com 
-            string cik = "PUTA40CHARACTERCIKHERE";
+            string cik;
+            OnePV1Form frm = new OnePV1Form();
+            frm.ShowDialog();
+            cik = frm.cik;
             OnepV1Examples(cik);         //Layer 1 (low level) examples
             ClientOnepV1Examples(cik);   //Layer 2 (batched/overloaded) examples
         }
