@@ -30,15 +30,16 @@ Release Info
 Release 0.7
 ----------------------------------------
 --) Add provisioning support and example<br>
---) Add UI for examples
+--) Add UI for examples<br>
+--) Update `listing` RPC method, keeping backwards compatibility<br>
 
 ----------------------------------------
 Release 0.6
 ----------------------------------------
---) Add writegroup RPC method, update tests accordingly<br>
---) Add recordbatch<br>
---) Add usage<br>
---) Add wait and example test<br>
+--) Add `writegroup` RPC method, update tests accordingly<br>
+--) Add `recordbatch`<br>
+--) Add `usage`<br>
+--) Add `wait` and example test<br>
 
 ----------------------------------------
 Release 0.5
