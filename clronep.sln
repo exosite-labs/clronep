@@ -1,11 +1,18 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clronep", "clronep\clronep.csproj", "{0683250D-5498-423B-91F2-A1745DF6376C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clronep.examples", "clronep.examples\clronep.examples.csproj", "{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clronep.tests", "clronep.tests\clronep.tests.csproj", "{84797886-E135-4EC2-BC0A-D6A7513934BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clronep.provisionExamples", "clronep.provisionExamples\clronep.provisionExamples.csproj", "{AE26849D-E80B-4D94-8B80-1A115497FA9E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0683250D-5498-423B-91F2-A1745DF6376C} = {0683250D-5498-423B-91F2-A1745DF6376C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,16 +34,6 @@ Global
 		{0683250D-5498-423B-91F2-A1745DF6376C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{0683250D-5498-423B-91F2-A1745DF6376C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{0683250D-5498-423B-91F2-A1745DF6376C}.Release|x86.ActiveCfg = Release|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|x86.ActiveCfg = Release|Any CPU
 		{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -47,11 +44,31 @@ Global
 		{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}.Release|Mixed Platforms.Build.0 = Release|x86
 		{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}.Release|x86.ActiveCfg = Release|x86
 		{9C700AC4-CCA2-4CE6-8B80-879B7CC68A22}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = clronep.examples\clronep.examples.csproj
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{84797886-E135-4EC2-BC0A-D6A7513934BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AE26849D-E80B-4D94-8B80-1A115497FA9E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = clronep.examples\clronep.examples.csproj
 	EndGlobalSection
 EndGlobal

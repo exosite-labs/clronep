@@ -26,4 +26,8 @@ namespace clronep{
 	{
 		public HttpRPCResponseException(string message):base(message){}
 	}
+    public class ProvisionException : OneException
+    {
+        public ProvisionException(string message):base(message){}
+    }
 }

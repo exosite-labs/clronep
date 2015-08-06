@@ -11,7 +11,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections;
+
 namespace clronep
 {
     public class OnepV1
@@ -112,6 +112,7 @@ namespace clronep
             object[] argu = new object[] { rid, options };
             return callRPC(clientkey, "info", argu);
         }
+        // listing methods without RIDs are deprecated
         public Result listing(string clientkey, object types)
         {
             object[] argu = new object[] { types, EmptyOption.Instance };
@@ -120,6 +121,16 @@ namespace clronep
         public Result listing(string clientkey, object types, object options)
         {
             object[] argu = new object[] { types, options };
+            return callRPC(clientkey, "listing", argu);
+        }
+        public Result listing(string clientkey, string rid, object types)
+        {
+            object[] argu = new object[] { rid, types, EmptyOption.Instance };
+            return callRPC(clientkey, "listing", argu);
+        }
+        public Result listing(string clientkey, string rid, object types, object options)
+        {
+            object[] argu = new object[] { rid, types, options };
             return callRPC(clientkey, "listing", argu);
         }
         public Result lookup(string clientkey, string type, string alias)

@@ -148,5 +148,16 @@ namespace clronep
                 throw new OneException("Unknown exception.");
             }
         }
+        static internal Result parseProvisionResponse(string res, string statuscode)
+        {
+            if (statuscode == "OK" || statuscode == "NoContent" || statuscode == "ResetContent")
+            {
+                return new Result { status = statuscode, message = res };
+            }
+            else
+            {
+                return new Result { status = Result.FAIL, message = res };
+            }
+        }
     }
 }

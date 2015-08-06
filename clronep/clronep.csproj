@@ -48,6 +48,7 @@
     <Compile Include="OneException.cs" />
     <Compile Include="OnepV1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provision.cs" />
     <Compile Include="Result.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
