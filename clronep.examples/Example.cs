@@ -14,7 +14,7 @@
 using System;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-
+using System.Threading;
 namespace clronep.examples
 {
     /// <summary>
@@ -34,6 +34,37 @@ namespace clronep.examples
             OnepV1Examples(cik);         //Layer 1 (low level) examples
             ClientOnepV1Examples(cik);   //Layer 2 (batched/overloaded) examples
         }
+
+        /// <summary>
+        /// Worker function for wait threading in OnepV1Examples
+        /// </summary>
+        public static void waitFunction(string cik, string rid, OnepV1 oneConn)
+        {
+            Dictionary<string, int> waitOptions = new Dictionary<string, int>();
+            waitOptions.Add("timeout", 30000);
+            Console.WriteLine("Waiting on dataport with RID " + rid);
+            Result result = oneConn.wait(cik, rid, waitOptions);
+            if (result.status == Result.OK)
+            {
+                Console.WriteLine("\r\nWait output: ");
+                Console.WriteLine(result.message);
+                Console.WriteLine("\r\n");
+            }
+        }
+
+        /// <summary>
+        /// Worker function for write threading in OnepV1Examples
+        /// </summary>
+        public static void waitWrite(string cik, string rid, OnepV1 oneConn)
+        {
+            Thread.Sleep(10000);
+            int val = new Random().Next(1, 100);
+            Result result = oneConn.write(cik, rid, val);
+            if (result.status == Result.OK)
+            {
+                Console.WriteLine(val+10 +" is the expected output of the wait");
+            }
+        }
         
         /// <summary>
         /// OnepV1Examples method - example sequence for layer 1 calls. Layer 1
@@ -42,7 +73,7 @@ namespace clronep.examples
         public static void OnepV1Examples(string cik)
         {
             //OnepV1(url, timeout)
-            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/api:v1/rpc/process", 3);
+            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 35);
             Result result;
             try
             {
@@ -132,6 +163,18 @@ namespace clronep.examples
                     Console.WriteLine(result.message);
                     Console.WriteLine("\r\n");
                 }
+
+                //wait example
+                rid = oneConn.lookup(cik, "alias", "X1").message;
+                ThreadStart starter = delegate { waitFunction(cik, rid, oneConn); };
+                Thread thread = new Thread(starter);
+                ThreadStart starter2 = delegate { waitWrite(cik, rid, oneConn); };
+                Thread thread2 = new Thread(starter2);
+                thread.Start();
+                thread2.Start();
+                Console.WriteLine("Waiting with timeout of 30 seconds for a write that will occur in 10 seconds");
+                thread2.Join(Timeout.Infinite);
+                thread.Join(Timeout.Infinite);
             }
             catch (OneException e)
             {
@@ -148,7 +191,7 @@ namespace clronep.examples
         public static void ClientOnepV1Examples(string cik)
         {
             //ClientOnepV1(url, timeout, cik)
-            ClientOnepV1 conn = new ClientOnepV1("http://m2.exosite.com/api:v1/rpc/process", 3, cik);
+            ClientOnepV1 conn = new ClientOnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3, cik);
             int val = new Random().Next(1, 100);
             string alias_name = "X1";
             string alias2_name = "X2";
@@ -218,7 +261,7 @@ namespace clronep.examples
                 Dictionary<string, object> entries = new Dictionary<string, object>();
                 entries.Add(alias_name, val);
                 entries.Add(alias2_name, val);
-                result = conn.write(entries); 
+                result = conn.writegroup(entries); 
                 //NOTE: this call returns Result.OK regardless if _any_ of the writes were successful or not
                 if (result.status == Result.OK)
                 {

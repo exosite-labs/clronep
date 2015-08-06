@@ -10,6 +10,8 @@
 */
 
 using System;
+using System.Collections.Generic;
+using System.Collections;
 namespace clronep
 {
     public class OnepV1
@@ -140,6 +142,7 @@ namespace clronep
             object[] argu = new object[] { rid, options };
             return callRPC(clientkey, "read", argu);
         }
+        //Record is deprecated, use recordbatch
         public Result record(string clientkey, string rid, object[] entries, object options)
         {
             object[] argu = new object[] { rid, entries, options };
@@ -149,6 +152,16 @@ namespace clronep
         {
             object[] argu = new object[] { rid, entries, options };
             return callRPC(clientkey, "record", argu);
+        }
+        public Result recordbatch(string clientkey, string rid, object[] entries, object options)
+        {
+            object[] argu = new object[] { rid, entries, options };
+            return callRPC(clientkey, "recordbatch", argu);
+        }
+        public Result recordbatch(string clientkey, object rid, object[] entries, object options)
+        {
+            object[] argu = new object[] { rid, entries, options };
+            return callRPC(clientkey, "recordbatch", argu);
         }
         public Result revoke(string clientkey, string codetype, string code)
         {
@@ -180,6 +193,36 @@ namespace clronep
             object[] argu = new object[] { rid, desc };
             return callRPC(clientkey, "update", argu);
         }
+        public Result usage(string clientkey, string rid, string metric, int starttime, int endtime)
+        {
+            object[] argu = new object[] { rid, metric, starttime, endtime };
+            return callRPC(clientkey, "usage", argu);
+        }
+        public Result usage(string clientkey, object rid, string metric, int starttime, int endtime)
+        {
+            object[] argu = new object[] { rid, metric, starttime, endtime };
+            return callRPC(clientkey, "usage", argu);
+        }
+        public Result wait(string clientkey, string rid)
+        {
+            object[] argu = new object[] { rid, EmptyOption.Instance };
+            return callRPC(clientkey, "wait", argu);
+        }
+        public Result wait(string clientkey, object rid)
+        {
+            object[] argu = new object[] { rid, EmptyOption.Instance };
+            return callRPC(clientkey, "wait", argu);
+        }
+        public Result wait(string clientkey, string rid, object options)
+        {
+            object[] argu = new object[] { rid, options };
+            return callRPC(clientkey, "wait", argu);
+        }
+        public Result wait(string clientkey, object rid, object options)
+        {
+            object[] argu = new object[] { rid, options };
+            return callRPC(clientkey, "wait", argu);
+        }
         public Result write(string clientkey, string rid, object value)
         {
             object[] argu = new object[] { rid, value, EmptyOption.Instance };
@@ -209,6 +252,16 @@ namespace clronep
         {
             object[] argu = new object[] { entries, options };
             return callRPC(clientkey, "write", argu);
+        }
+        public Result writegroup(string clientkey, Dictionary<string, object> entries)
+        {
+            object[] argu = new object[] { entries };
+            return callRPC(clientkey, "writegroup", argu);
+        }
+        public Result writegroup(string clientkey, Dictionary<string, object> entries, object options)
+        {
+            object[] argu = new object[] { entries, options };
+            return callRPC(clientkey, "writegroup", argu);
         }
     }
 }

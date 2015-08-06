@@ -32,7 +32,7 @@ namespace clronep
 		[SetUp]
 		public void Init(){
 			Thread.Sleep(1000);//sleep 1 second
-			conn = new OnepV1("http://m2.exosite.com/api:v1/rpc/process",3);//timeout 3 seconds
+            conn = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3);//timeout 3 seconds
 		}
 		/*
 		[Test]
@@ -133,11 +133,11 @@ namespace clronep
 		}
 		
 		[Test]
-		public void record(){
+		public void recordbatch(){
 			object[] data1 = new object[]{-2,1};
 			object[] data2 = new object[]{-1,2};	
 			object[] entries =	new object[]{data1,data2};
-			Result obj = conn.record(clientKey,rid,entries,EmptyOption.Instance);
+			Result obj = conn.recordbatch(clientKey,rid,entries,EmptyOption.Instance);
 			Assert.AreEqual(Result.OK,obj.status);	
 		}
 		

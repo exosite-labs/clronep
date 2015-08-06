@@ -86,6 +86,7 @@ namespace clronep
         {
             return res.status == Result.OK;
         }       
+
         /*
          * the comment function has been deprecated in One Platform
         public Result comment(string alias, string visibility, string comments)
@@ -212,6 +213,26 @@ namespace clronep
                     data.Add(entry);              
                 }              
                 return base.write(_CIK, data.ToArray());
+        }
+
+        public Result writegroup(Dictionary<string, object> entries)
+        {
+            Dictionary<string, object> entry = new Dictionary<string,object>();
+            foreach (string alias in entries.Keys)
+            {
+                string rid = null;
+                try
+                {
+                    rid = getRID(alias);
+                }
+                catch (OneException)
+                {
+                    continue;
+                }
+                object val = entries[alias];
+                entry.Add(rid, val);
+            }
+            return base.writegroup(_CIK, entry);
         }
     }
 }
