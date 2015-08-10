@@ -1,13 +1,11 @@
 /*=============================================================================
 * Examples.cs
 * Use-case examples.
-* Note that CIK strings ("PUTA40CHARACTER...") need to be replaced with a valid
-* value.
 *==============================================================================
 *
-* Tested with .NET Framework 3.5
+* Tested with .NET Framework 4.6
 *
-* Copyright (c) 2011, Exosite LLC
+* Copyright (c) 2015, Exosite LLC
 * All rights reserved.
 */
 

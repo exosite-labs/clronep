@@ -4,13 +4,12 @@
 * Provides simple use for 1p client layer given CIK.
 ==============================================================================
 
-Tested with .NET Framework 3.5
+Tested with .NET Framework 4.6
 
-Copyright (c) 2011, Exosite LLC
+Copyright (c) 2015, Exosite LLC
 All rights reserved.
 */
 using System;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Collections;

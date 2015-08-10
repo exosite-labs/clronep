@@ -6,14 +6,14 @@ exposed over HTTP in a JSON RPC style interface.  The solution creates a Common
 Language Runtime dll for use by .NET applications that wish to interact with 
 Exosite's One Platform.
 
-Recommend using with Microsoft .NET Framework 3.5.
+Recommend using with Microsoft .NET Framework 4.6.
 
-License is BSD, Copyright 2011, Exosite LLC (see LICENSE file)
+License is BSD, Copyright 2015, Exosite LLC (see LICENSE file)
 
 ========================================
 Quick Start
 ========================================
-Tested with Visual Studio 2010 (Windows) and MonoDevelop 2.4/Mono 2.6.7 
+Tested with Visual Studio 2015 (Windows) and MonoDevelop 2.4/Mono 2.6.7 
 (Windows/Linux).
 
 --) Example test project in the ./clronep/clronep.examples/ folder<br>
@@ -25,6 +25,11 @@ documentation at http://exosite.com/developers/documentation.
 ========================================
 Release Info
 ========================================
+
+----------------------------------------
+Release 0.8
+----------------------------------------
+--) Update to .NET Framework 4.6<br>
 
 ----------------------------------------
 Release 0.7

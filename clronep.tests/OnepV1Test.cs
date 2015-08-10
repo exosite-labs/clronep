@@ -5,23 +5,19 @@
 * valid values.
 *==============================================================================
 *
-* Tested with .NET Framework 3.5
+* Tested with .NET Framework 4.6
 *
-* Copyright (c) 2011, Exosite LLC
+* Copyright (c) 2015, Exosite LLC
 * All rights reserved.
 */
 
-using System;
-using System.IO;
-using System.Text;
 using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
-using clronep;
 
 namespace clronep
 {
-	[TestFixture]
+    [TestFixture]
 	public class OnepV1Test
 	{
 		OnepV1 conn;
