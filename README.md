@@ -30,6 +30,7 @@ Release Info
 Release 0.8
 ----------------------------------------
 --) Update to .NET Framework 4.6<br>
+--) Update examples to default to HTTPS<br>
 
 ----------------------------------------
 Release 0.7
