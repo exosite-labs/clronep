@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*=============================================================================
+* provisionExamples.cs
+* Use-case examples.
+*==============================================================================
+*
+* Tested with .NET Framework 4.6
+*
+* Copyright (c) 2015, Exosite LLC
+* All rights reserved.
+*/
+
+using System;
 using System.Collections.Generic;
 
 namespace clronep.provisionExamples
@@ -20,7 +31,7 @@ namespace clronep.provisionExamples
             string sn1 = "001" + r.ToString();
             string sn2 = "002" + r.ToString();
             string sn3 = "003" + r.ToString();
-            OnepV1 op = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3);
+            OnepV1 op = new OnepV1("https://m2.exosite.com/onep:v1/rpc/process", 3);
             Result portalridResult = op.lookup(portalcik, "alias", "");
             string portalrid = null;
             string clonerid = null;
@@ -36,7 +47,7 @@ namespace clronep.provisionExamples
             {
                 clonerid = cloneridResult.message;
                 Console.WriteLine("\r\nclonerid: " + clonerid);
-                provision = new Provision("http://m2.exosite.com", 3, false, true);
+                provision = new Provision("https://m2.exosite.com", 3, false, true);
             }
             else Console.WriteLine("\r\nFailed to look up clone RID");
             Dictionary<string, string> meta = new Dictionary<string, string>();

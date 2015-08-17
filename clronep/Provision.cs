@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*=============================================================================
+* Provision.cs
+* Wrapper class for Provisioning API procedures.
+*==============================================================================
+*
+* Tested with .NET Framework 4.6
+*
+* Copyright (c) 2015, Exosite LLC
+* All rights reserved.
+*/
+
+using System;
 using System.Collections.Generic;
 using System.Net;
 

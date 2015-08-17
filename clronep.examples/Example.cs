@@ -1,13 +1,11 @@
 /*=============================================================================
 * Examples.cs
 * Use-case examples.
-* Note that CIK strings ("PUTA40CHARACTER...") need to be replaced with a valid
-* value.
 *==============================================================================
 *
-* Tested with .NET Framework 3.5
+* Tested with .NET Framework 4.6
 *
-* Copyright (c) 2011, Exosite LLC
+* Copyright (c) 2015, Exosite LLC
 * All rights reserved.
 */
 
@@ -76,7 +74,7 @@ namespace clronep.examples
         public static void OnepV1Examples(string cik)
         {
             //OnepV1(url, timeout)
-            OnepV1 oneConn = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 35);
+            OnepV1 oneConn = new OnepV1("https://m2.exosite.com/onep:v1/rpc/process", 35);
             Result result;
             try
             {
@@ -194,7 +192,7 @@ namespace clronep.examples
         public static void ClientOnepV1Examples(string cik)
         {
             //ClientOnepV1(url, timeout, cik)
-            ClientOnepV1 conn = new ClientOnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3, cik);
+            ClientOnepV1 conn = new ClientOnepV1("https://m2.exosite.com/onep:v1/rpc/process", 3, cik);
             int val = new Random().Next(1, 100);
             string alias_name = "X1";
             string alias2_name = "X2";

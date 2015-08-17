@@ -5,23 +5,19 @@
 * valid values.
 *==============================================================================
 *
-* Tested with .NET Framework 3.5
+* Tested with .NET Framework 4.6
 *
-* Copyright (c) 2011, Exosite LLC
+* Copyright (c) 2015, Exosite LLC
 * All rights reserved.
 */
 
-using System;
-using System.IO;
-using System.Text;
 using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
-using clronep;
 
 namespace clronep
 {
-	[TestFixture]
+    [TestFixture]
 	public class OnepV1Test
 	{
 		OnepV1 conn;
@@ -32,7 +28,7 @@ namespace clronep
 		[SetUp]
 		public void Init(){
 			Thread.Sleep(1000);//sleep 1 second
-            conn = new OnepV1("http://m2.exosite.com/onep:v1/rpc/process", 3);//timeout 3 seconds
+            conn = new OnepV1("https://m2.exosite.com/onep:v1/rpc/process", 3);//timeout 3 seconds
 		}
 		/*
 		[Test]
@@ -68,13 +64,13 @@ namespace clronep
 		[Test]
 		[ExpectedException(typeof(HttpRPCResponseException),ExpectedMessage="Unable to get http response.")]
 		public void responseException(){
-			conn = new OnepV1("http://m2.exosite.com/api:v1/rpc/processes",3);
+			conn = new OnepV1("https://m2.exosite.com/onep:v1/rpc/processes",3);
 			conn.lookup(clientKey,"alias","X1");
 		}
 		[Test]
 		[ExpectedException(typeof(HttpRPCRequestException),ExpectedMessage="Unable to make http request.")]
 		public void requestException(){
-			conn = new OnepV1("http://0.0.0.1/api:v1/rpc/process",3);
+			conn = new OnepV1("https://0.0.0.1/onep:v1/rpc/process",3);
 			conn.lookup(clientKey,"alias","X1");
 		}
 		
